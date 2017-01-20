@@ -5,10 +5,10 @@ var ROTATE_STEP = 6
 var ROTATE_THRESHOLD = 6.28
 
 var ACCELERATION = 500
-var BOOST = 4000
-var BOOST_FUEL = 50
+var BOOST = 1500
+var BOOST_FUEL = 6
 
-var GRAVITY_FACTOR = 1000000000
+var GRAVITY_FACTOR = 100000000000
 
 var rotation = 0
 var current_acceleration = Vector2(0, 0)
@@ -40,20 +40,24 @@ func _integrate_forces(s):
 
     var acceleration_vector = Vector2(0,-1).rotated(self.rotation)
 
-    if accelerate and self.fuel > 0:
+    if accelerate and self.fuel > step * 10:
         lv = lv + acceleration_vector * self.ACCELERATION * step
         self.thrust_node.set_emitting(true)
         self.fuel = self.fuel - step * 10
-    elif boost and self.fuel > 0:
+    elif boost and self.fuel > step * 10 * self.BOOST_FUEL:
         lv = lv + acceleration_vector * self.BOOST * step
         self.thrust_node.set_emitting(true)
         self.fuel = self.fuel - step * 10 * self.BOOST_FUEL
-    else:
-        self.fuel = self.fuel + step * 100
+    elif self.fuel < 10:
+        self.fuel = self.fuel + step * 20
+        if self.fuel > 10:
+            self.fuel = 10
 
     lv += s.get_total_gravity() * step * self.GRAVITY_FACTOR
     self.current_acceleration = lv
     s.set_linear_velocity(lv)
+
+    print(self.fuel)
 
 
 func _ready():

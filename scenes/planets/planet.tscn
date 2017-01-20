@@ -5,12 +5,12 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 40.0
+radius = 60.0
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 400.0
+radius = 500.0
 
 [node name="planet" type="Control"]
 
@@ -54,7 +54,7 @@ shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 space_override = 1
 gravity_point = true
-gravity_distance_scale = 300.0
+gravity_distance_scale = 500.0
 gravity_vec = Vector2( 0, 1 )
 gravity = 1000.0
 linear_damp = 0.001
