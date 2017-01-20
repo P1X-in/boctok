@@ -4,7 +4,7 @@ extends RigidBody2D
 var ROTATE_STEP = 6
 var ROTATE_THRESHOLD = 6.28
 
-var ACCELERATION = 500
+var ACCELERATION = 300
 var BOOST = 1500
 var BOOST_FUEL = 6
 
@@ -56,8 +56,6 @@ func _integrate_forces(s):
     lv += s.get_total_gravity() * step * self.GRAVITY_FACTOR
     self.current_acceleration = lv
     s.set_linear_velocity(lv)
-
-    print(self.fuel)
 
 
 func _ready():
