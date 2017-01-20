@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="ColorRamp" id=1]
+
+offsets = FloatArray( 0, 0.263158, 0.760234, 1 )
+colors = ColorArray( 1, 1, 1, 1, 0.992188, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0 )
+
+[node name="Thrust" type="Particles2D"]
+
+config/amount = 80
+config/lifetime = 0.3
+config/emit_timeout = 0.1
+config/emitting = false
+config/half_extents = Vector2( 8, 0 )
+config/local_space = false
+params/direction = 0.0
+params/spread = 0.0
+params/linear_velocity = 200.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 4.0
+params/final_size = 2.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 1.0
+randomness/linear_velocity = 0.3
+color/color_ramp = SubResource( 1 )
+
+

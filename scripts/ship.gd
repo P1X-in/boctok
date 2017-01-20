@@ -10,6 +10,8 @@ var GRAVITY_FACTOR = 10000000000
 
 var rotation = 0
 var current_acceleration = Vector2(0, 0)
+var thrust = preload("res://scenes/thrust.tscn")
+var thrust_node = null
 
 func _integrate_forces(s):
     var lv = s.get_linear_velocity()
@@ -34,7 +36,7 @@ func _integrate_forces(s):
 
     if accelerate:
         lv = lv + acceleration_vector * self.ACCELERATION * step
-
+        self.thrust_node.set_emitting(true)
     lv += s.get_total_gravity() * step * self.GRAVITY_FACTOR
     self.current_acceleration = lv
     s.set_linear_velocity(lv)
@@ -42,4 +44,5 @@ func _integrate_forces(s):
 
 func _ready():
     self.set_mode(self.MODE_CHARACTER)
+    self.thrust_node = self.get_node("Thrust")
     print('ready')

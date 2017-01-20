@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/planets/planet.tscn" type="PackedScene" id=1]
+
+[node name="planet2" instance=ExtResource( 1 )]
+
+mass = 10.2041
+gravity_scale = 2.0
+can_sleep = false
+
+[node name="Sprite" parent="."]
+
+transform/pos = Vector2( 138, 47 )
+
+

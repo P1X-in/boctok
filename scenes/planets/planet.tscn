@@ -1,74 +1,30 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://scenes/planets/planet_2.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=1]
 
-[sub_resource type="CircleShape2D" id=1]
+[node name="planet" type="RigidBody2D"]
 
-custom_solver_bias = 0.0
-radius = 40.0
-
-[sub_resource type="CircleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 400.0
-
-[node name="planet" type="Control"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 2.4, 0, 0, 2.4, -1, 0 )
-shapes/0/trigger = false
-collision/layers = 2
-collision/mask = 3
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-
-transform/pos = Vector2( -1, 0 )
-transform/scale = Vector2( 2.4, 2.4 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
-[node name="Area2D" type="Area2D" parent="."]
-
-input/pickable = true
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-space_override = 1
-gravity_point = true
-gravity_distance_scale = 300.0
-gravity_vec = Vector2( 0, 1 )
-gravity = 1000.0
-linear_damp = 0.001
-angular_damp = 0.0
-collision/layers = 3
-collision/mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
 
 

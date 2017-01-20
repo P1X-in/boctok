@@ -13,22 +13,10 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 0.0
+margin/right = -256.0
+margin/bottom = -120.0
 script/script = ExtResource( 1 )
-__meta__ = { "_edit_lock_":true }
 
 [node name="board" parent="." instance=ExtResource( 2 )]
 
-anchor/right = 1
-anchor/bottom = 1
-margin/right = 0.0
-margin/bottom = 0.0
 
-[node name="Viewport" parent="board"]
-
-editor/display_folded = true
-rect = Rect2( 0, 0, 1024, 600 )
-
-
-[editable path="board"]
