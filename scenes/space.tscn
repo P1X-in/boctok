@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://scenes/ships/ship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/planets/planet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/planets/planet.tscn" type="PackedScene" id=1]
 
 [node name="space" type="Control"]
 
@@ -14,11 +13,7 @@ margin/top = -3.0
 margin/right = 1281.0
 margin/bottom = 717.0
 
-[node name="ship" parent="." instance=ExtResource( 1 )]
-
-editor/display_folded = true
-
-[node name="planet" parent="." instance=ExtResource( 2 )]
+[node name="planet" parent="." instance=ExtResource( 1 )]
 
 editor/display_folded = true
 margin/left = 513.0
@@ -26,7 +21,7 @@ margin/top = 56.0
 margin/right = 553.0
 margin/bottom = 96.0
 
-[node name="planet 2" parent="." instance=ExtResource( 2 )]
+[node name="planet 2" parent="." instance=ExtResource( 1 )]
 
 margin/left = 247.0
 margin/top = 366.0
@@ -34,5 +29,4 @@ margin/right = 287.0
 margin/bottom = 406.0
 
 
-[editable path="ship"]
 [editable path="planet"]
