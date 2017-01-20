@@ -23,9 +23,18 @@ margin/bottom = 312.0
 
 [node name="ship" parent="." instance=ExtResource( 2 )]
 
-margin/left = 171.0
-margin/top = 264.0
-margin/right = 211.0
-margin/bottom = 304.0
+[node name="planet 2" parent="." instance=ExtResource( 1 )]
+
+margin/left = -44.0
+margin/top = 486.0
+margin/right = -4.0
+margin/bottom = 526.0
+
+[node name="planet 3" parent="." instance=ExtResource( 1 )]
+
+margin/left = 590.0
+margin/top = 648.0
+margin/right = 630.0
+margin/bottom = 688.0
 
 
