@@ -13,7 +13,7 @@ extents = Vector2( 30, 30 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( -7.15277e-08, -1.63636, 0.656871, -2.87127e-08, 2.81334e-06, 6.1524 )
+shapes/0/transform = Matrix32( -3.93403e-08, -0.9, 0.3, -1.31134e-08, 2.68221e-06, 3.1524 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -41,7 +41,6 @@ transform/pos = Vector2( 0, 55 )
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/rot = 90.0
-transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
 [node name="camera" type="Camera2D" parent="."]
@@ -65,9 +64,9 @@ drag_margin/bottom = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 2.81334e-06, 6.1524 )
+transform/pos = Vector2( 2.68221e-06, 3.1524 )
 transform/rot = 90.0
-transform/scale = Vector2( 1.63636, 0.656871 )
+transform/scale = Vector2( 0.9, 0.3 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

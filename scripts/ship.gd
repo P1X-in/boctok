@@ -46,6 +46,7 @@ func _integrate_forces(s):
         self.fuel = self.fuel - step * 10
     elif boost and self.fuel > 0:
         lv = lv + acceleration_vector * self.BOOST * step
+        self.thrust_node.set_emitting(true)
         self.fuel = self.fuel - step * 10 * self.BOOST_FUEL
     else:
         self.fuel = self.fuel + step * 100
