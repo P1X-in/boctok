@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/planets/planet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ships/ship.tscn" type="PackedScene" id=2]
+
+[node name="space" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = -1.0
+margin/right = 1280.0
+margin/bottom = 719.0
+
+[node name="planet" parent="." instance=ExtResource( 1 )]
+
+margin/left = 419.0
+margin/top = 272.0
+margin/right = 459.0
+margin/bottom = 312.0
+
+[node name="ship" parent="." instance=ExtResource( 2 )]
+
+margin/left = 171.0
+margin/top = 264.0
+margin/right = 211.0
+margin/bottom = 304.0
+
+
