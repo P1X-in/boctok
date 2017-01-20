@@ -36,7 +36,13 @@ script/script = ExtResource( 1 )
 
 [node name="Thrust" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 0, 55 )
+transform/pos = Vector2( 0.999999, 29 )
+transform/scale = Vector2( 0.1875, 1.65625 )
+config/local_space = true
+params/spread = 6.08
+params/gravity_strength = 0.0
+params/initial_size = 6.0
+params/final_size = 3.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -45,6 +51,7 @@ texture = ExtResource( 3 )
 
 [node name="camera" type="Camera2D" parent="."]
 
+visibility/visible = false
 anchor_mode = 1
 rotating = false
 current = true
@@ -64,6 +71,7 @@ drag_margin/bottom = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 2.68221e-06, 3.1524 )
 transform/rot = 90.0
 transform/scale = Vector2( 0.9, 0.3 )
