@@ -10,6 +10,12 @@ var keyboard_use = null
 var gamepad_handlers = []
 var keyboard_handlers = []
 
+
+var rocket_template = preload("res://scenes/ships/rocket.tscn")
+var rocket_cooldown = false
+var rocket_firing = false
+var ROCKET_COOLDOWN_TIME = 0.1
+
 func _init(bag, player_id).(bag):
     self.bag = bag
     self.player_id = player_id
@@ -22,6 +28,7 @@ func _init(bag, player_id).(bag):
         #preload("res://scripts/input/handlers/player_accelerate_axis.gd").new(self.bag, self, 3),
         preload("res://scripts/input/handlers/player_accelerate_button.gd").new(self.bag, self, JOY_BUTTON_0),
         preload("res://scripts/input/handlers/player_boost_button.gd").new(self.bag, self, JOY_BUTTON_1),
+        preload("res://scripts/input/handlers/rocket_launch_button.gd").new(self.bag, self, JOY_BUTTON_2),
     ]
 
     self.keyboard_handlers = [
@@ -29,6 +36,7 @@ func _init(bag, player_id).(bag):
         preload("res://scripts/input/handlers/player_rotate_key.gd").new(self.bag, self, KEY_RIGHT, -1),
         preload("res://scripts/input/handlers/player_accelerate_key.gd").new(self.bag, self, KEY_UP),
         preload("res://scripts/input/handlers/player_boost_key.gd").new(self.bag, self, KEY_DOWN),
+        preload("res://scripts/input/handlers/rocket_launch_key.gd").new(self.bag, self, KEY_SPACE),
     ]
 
 func spawn(initial_position):
@@ -77,7 +85,8 @@ func unbind_gamepad():
     self.gamepad_id = null
 
 func reset():
-    return
+    self.rocket_cooldown = false
+    self.rocket_firing = false
 
 func bind_camera(viewport):
     self.camera.set_custom_viewport(viewport)
@@ -90,3 +99,27 @@ func process(delta):
     hud.update_fuel(self.avatar.fuel)
     hud.update_gravity(self.avatar.current_gravity)
     hud.update_ship_velocity(self.avatar.current_acceleration)
+
+    if self.rocket_firing and not self.rocket_cooldown:
+        self.fire_rocket()
+
+
+func fire_rocket():
+    if self.rocket_cooldown:
+        return
+
+    var rocket = self.rocket_template.instance()
+    var position = self.avatar.get_pos()
+    var rocket_offset = Vector2(0, -1).rotated(self.avatar.rotation)
+    var rocket_position = position + rocket_offset * 50
+
+    rocket.initial_velocity = self.avatar.current_acceleration + rocket_offset * 500
+
+    self.bag.board.attach_object(rocket)
+    rocket.set_pos(rocket_position)
+
+    self.rocket_cooldown = true
+    self.bag.timers.set_timeout(self.ROCKET_COOLDOWN_TIME, self, "rocket_cooldown_done")
+
+func rocket_cooldown_done():
+    self.rocket_cooldown = false
