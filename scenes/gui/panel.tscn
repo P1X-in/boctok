@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scripts/services/hud.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui/panel.png" type="Texture" id=2]
 [ext_resource path="res://scenes/share/pico8.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/gui/achtung.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -547,6 +548,7 @@ margin/bottom = 40.0
 
 [node name="sun" type="Control" parent="huds"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 40, 64 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -1029,5 +1031,22 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="proximity" type="Control" parent="huds"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="achtung" type="Sprite" parent="huds/proximity"]
+
+visibility/visible = false
+transform/pos = Vector2( 129, -47 )
+texture = ExtResource( 4 )
 
 

@@ -103,6 +103,7 @@ func process(delta):
     hud.update_fuel(self.avatar.fuel)
     hud.update_gravity(self.avatar.current_gravity)
     hud.update_ship_velocity(self.avatar.current_acceleration)
+    hud.update_sun_warning(self.avatar)
 
     if self.rocket_firing and not self.rocket_cooldown:
         self.fire_rocket()
