@@ -16,6 +16,5 @@ margin/bottom = 0.0
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 1 )
-centered = false
 
 

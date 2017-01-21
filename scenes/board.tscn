@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/space_background/cosmos.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/space.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gui/panel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/share/logo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/gui/frame.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/share/logo.tscn" type="PackedScene" id=5]
 
 [node name="board" type="Control"]
 
@@ -23,9 +24,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 2.0
+margin/top = 0.0
 margin/right = 640.0
-margin/bottom = 722.0
+margin/bottom = 720.0
 
 [node name="Viewport" type="Viewport" parent="left"]
 
@@ -97,6 +98,17 @@ margin/bottom = 0.0
 
 [node name="panel" parent="left/hud/anchor" instance=ExtResource( 3 )]
 
+[node name="frame" parent="left" instance=ExtResource( 4 )]
+
+[node name="box" parent="left/frame/top/contener"]
+
+margin/left = 192.0
+margin/right = 448.0
+
+[node name="label" parent="left/frame/top/contener/box"]
+
+text = "Yuri Gagarin"
+
 [node name="right" type="Control" parent="."]
 
 focus/ignore_mouse = false
@@ -154,9 +166,47 @@ margin/bottom = 0.0
 
 [node name="panel" parent="right/hud/anchor" instance=ExtResource( 3 )]
 
-[node name="logo" parent="." instance=ExtResource( 4 )]
+[node name="frame" parent="right" instance=ExtResource( 4 )]
 
-margin/left = 16.0
+[node name="box" parent="right/frame/top/contener"]
+
+margin/left = 192.0
+margin/right = 448.0
+
+[node name="label" parent="right/frame/top/contener/box"]
+
+text = "John Glenn"
+
+[node name="top_center" type="CenterContainer" parent="."]
+
+editor/display_folded = true
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 32.0
+use_top_left = false
+
+[node name="anchor" type="Control" parent="top_center"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 640.0
 margin/top = 16.0
+margin/right = 640.0
+margin/bottom = 16.0
+
+[node name="logo" parent="top_center/anchor" instance=ExtResource( 5 )]
+
+margin/top = 5.0
+margin/bottom = 5.0
 
 
+[editable path="left/frame"]
+[editable path="right/frame"]
