@@ -2,7 +2,7 @@ extends Control
 
 func _draw():
     var center = Vector2(5000,5000)
-    var radius = 4999
+    var radius = 1500
     var angle_from = 0
     var angle_to = 360
     var color = Color(1.0, 0.0, 0.0)

@@ -58,11 +58,11 @@ margin/bottom = 0.0
 
 [node name="cosmos" parent="left/Viewport/mount" instance=ExtResource( 1 )]
 
-MAX_STARS = 1000
-POS_X_MIN = -1024
-POS_X_MAX = 1024
-POS_Y_MIN = -1024
-POS_Y_MAX = 1024
+MAX_STARS = 2000
+POS_X_MIN = -2000
+POS_X_MAX = 2000
+POS_Y_MIN = -2000
+POS_Y_MAX = 2000
 
 [node name="space" parent="left/Viewport/mount" instance=ExtResource( 2 )]
 
