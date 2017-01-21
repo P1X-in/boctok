@@ -31,8 +31,6 @@ func _init(bag, player_id).(bag):
     ]
 
 func attach():
-    self.bind_keyboard()
-    self.bind_gamepad(0)
     .attach()
 
 func bind_keyboard():

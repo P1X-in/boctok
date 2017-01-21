@@ -12,6 +12,7 @@ func _init_bag(bag):
 func bind_players():
     self.players = [
         self.player_template.new(self.bag, 0),
+        self.player_template.new(self.bag, 1),
     ]
 
 func is_gamepad_in_use(id):
@@ -29,7 +30,11 @@ func is_keyboard_in_use():
 func spawn_players():
     for player in self.players:
         player.attach()
-        player.bind_camera(self.bag.board.viewport_right)
+
+    self.players[0].bind_keyboard()
+    self.players[0].bind_camera(self.bag.board.viewport_left)
+    self.players[1].bind_gamepad(0)
+    self.players[1].bind_camera(self.bag.board.viewport_right)
 
 func reset():
     for player in self.players:
