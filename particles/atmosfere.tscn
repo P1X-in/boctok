@@ -16,13 +16,13 @@ margin/bottom = 40.0
 
 [node name="atmosfere" parent="." instance=ExtResource( 1 )]
 
-visibility/self_opacity = 0.31
+visibility/self_opacity = 0.43
 visibility/behind_parent = false
 transform/scale = Vector2( 1, 1 )
 config/texture = ExtResource( 2 )
 params/spin_velocity = 4.0
 params/tangential_accel = 17.26
 params/initial_size = 1.8
-params/final_size = 1.9
+params/final_size = 4.0
 
 
