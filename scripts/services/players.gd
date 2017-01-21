@@ -16,7 +16,7 @@ func bind_players():
     ]
 
     self.players[0].bind_keyboard()
-    self.players[1].bind_gamepad(1)
+    self.players[0].bind_gamepad(1)
     self.players[0].bind_camera(self.bag.board.viewport_left)
     self.players[0].bind_hud(self.bag.board.hud_left)
     self.players[1].bind_gamepad(0)
