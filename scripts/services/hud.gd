@@ -7,7 +7,7 @@ var gravity_meter
 var movement_indicator
 var movement_meter
 var sun_indicator
-var proximity_indicator
+var proximity_indicators
 
 var sun_position = Vector2(5000, 5000)
 const SUN_PROXIMITY_ALERT_DISTANCE = 400
@@ -21,7 +21,10 @@ func _ready():
     self.movement_indicator = self.get_node('huds/sensors/sensor3/arrow')
     self.movement_meter = self.get_node('huds/sensors/sensor3/value')
     self.sun_indicator = self.get_node('huds/sun/arrow')
-    self.proximity_indicator = self.get_node('huds/proximity/achtung')
+    self.proximity_indicators = [
+        self.get_node('huds/proximity/achtung_ru'),
+        self.get_node('huds/proximity/achtung_en')
+    ]
 
 func update_sun_indicator(ship_position):
     var difference = self.sun_position - ship_position
@@ -54,9 +57,10 @@ func update_ship_velocity(velocity_vector):
         self.movement_meter.set_text(str(int(velocity_vector.length())))
         self.movement_indicator.set_rot(velocity_vector.angle() + 3.14)
 
-func update_sun_warning(avatar):
-    var distance = avatar.get_pos().distance_to(self.sun_position)
+func update_sun_warning(player):
+    var distance = player.avatar.get_pos().distance_to(self.sun_position)
     if distance <= self.SUN_PROXIMITY_ALERT_DISTANCE or distance >= self.TOO_FAR:
-        self.proximity_indicator.show()
+        self.proximity_indicators[player.player_id].show()
     else:
-        self.proximity_indicator.hide()
+        self.proximity_indicators[0].hide()
+        self.proximity_indicators[1].hide()

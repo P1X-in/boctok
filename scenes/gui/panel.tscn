@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scripts/services/hud.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui/panel.png" type="Texture" id=2]
 [ext_resource path="res://scenes/share/pico8.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://scenes/gui/achtung.png" type="Texture" id=4]
+[ext_resource path="res://scenes/gui/achtung_ru.png" type="Texture" id=4]
+[ext_resource path="res://scenes/gui/achtung_en.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -1043,10 +1044,16 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 
-[node name="achtung" type="Sprite" parent="huds/proximity"]
+[node name="achtung_ru" type="Sprite" parent="huds/proximity"]
 
 visibility/visible = false
 transform/pos = Vector2( 129, -47 )
 texture = ExtResource( 4 )
+
+[node name="achtung_en" type="Sprite" parent="huds/proximity"]
+
+visibility/visible = false
+transform/pos = Vector2( 129, -47 )
+texture = ExtResource( 5 )
 
 
