@@ -27,6 +27,7 @@ var boost = false
 func _integrate_forces(s):
     var lv = s.get_linear_velocity()
     var step = s.get_step()
+    self.current_acceleration = lv
 
     var engines_on = {"Main" : false, "Left": false, "Right" : false}
 
@@ -54,14 +55,9 @@ func _integrate_forces(s):
         engines_on["Left"] = true
         engines_on["Right"] = true
         self.fuel = self.fuel - step * 10 * self.BOOST_FUEL
-    #elif self.fuel < 10:
-    #    self.fuel = self.fuel + step * 20
-    #    if self.fuel > 10:
-    #        self.fuel = 10
 
     self.current_gravity = s.get_total_gravity() * step * self.GRAVITY_FACTOR
     lv += self.current_gravity
-    self.current_acceleration = lv
     self.__engines_start(engines_on)
     s.set_linear_velocity(lv)
 
