@@ -10,8 +10,9 @@ func _init(bag, player, axis):
     self.axis = axis
 
 func handle(event):
-    if abs(event.value) > 0.1:
-        self.player.avatar.do_rotate = true
+    if event.value < -0.1:
+        self.player.avatar.accelerate = true
+        self.player.avatar.accelerate_factor = -event.value
     else:
-        self.player.avatar.do_rotate = false
-    self.player.avatar.rotate_factor = -event.value
+        self.player.avatar.accelerate = false
+        self.player.avatar.accelerate_factor = 0

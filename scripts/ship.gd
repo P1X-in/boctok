@@ -35,7 +35,10 @@ func _integrate_forces(s):
             self.rotation = self.rotation - self.ROTATE_THRESHOLD
         if self.rotation < 0:
             self.rotation = self.rotation + self.ROTATE_THRESHOLD
+        if self.rotate_factor < 0:
             engines_on["Left"] = true
+        elif self.rotate_factor > 0:
+            engines_on["Right"] = true
     self.set_rot(self.rotation)
 
     var acceleration_vector = Vector2(0,-1).rotated(self.rotation)

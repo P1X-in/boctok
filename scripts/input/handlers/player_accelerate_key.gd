@@ -13,3 +13,4 @@ func handle(event):
         return
 
     self.player.avatar.accelerate = event.is_pressed()
+    self.player.avatar.accelerate_factor = 1

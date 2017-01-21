@@ -13,9 +13,11 @@ func _init(bag, player_id).(bag):
     self.avatar = preload("res://scenes/ships/ship.tscn").instance()
 
     self.gamepad_handlers = [
-        #preload("res://scripts/input/handlers/player_rotate_axis.gd").new(self.bag, self, 0),
-        #preload("res://scripts/input/handlers/player_accelerate_gamepad.gd").new(self.bag, self, JOY_BUTTON_0),
-        #preload("res://scripts/input/handlers/player_boost_gamepad.gd").new(self.bag, self, JOY_BUTTON_0),
+        preload("res://scripts/input/handlers/player_rotate_axis.gd").new(self.bag, self, 0),
+        #preload("res://scripts/input/handlers/player_accelerate_axis.gd").new(self.bag, self, 1),
+        #preload("res://scripts/input/handlers/player_accelerate_axis.gd").new(self.bag, self, 3),
+        preload("res://scripts/input/handlers/player_accelerate_button.gd").new(self.bag, self, JOY_BUTTON_0),
+        preload("res://scripts/input/handlers/player_boost_button.gd").new(self.bag, self, JOY_BUTTON_1),
     ]
 
     self.keyboard_handlers = [
