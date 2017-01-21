@@ -1,12 +1,18 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scenes/space_background/cosmos.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/share/boctok-logo.png" type="Texture" id=2]
-[ext_resource path="res://scenes/ships/boctok-spacecraft.png" type="Texture" id=3]
-[ext_resource path="res://scenes/ships/nuke.png" type="Texture" id=4]
-[ext_resource path="res://scenes/avatars/gagarin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/share/p1x_pixelart.png" type="Texture" id=6]
-[ext_resource path="res://scenes/share/pico8.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/planets/planet3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/share/boctok-logo.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ships/boctok-spacecraft.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ships/nuke.png" type="Texture" id=5]
+[ext_resource path="res://scenes/avatars/gagarin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/share/p1x_pixelart.png" type="Texture" id=7]
+[ext_resource path="res://scenes/share/pico8.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 500.0
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -15,7 +21,7 @@ extra_spacing/bottom = 4
 extra_spacing/space = -16
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 7 )
+font/font = ExtResource( 8 )
 
 [node name="intro" type="Control"]
 
@@ -38,6 +44,52 @@ POS_X_MIN = 0
 POS_X_MAX = 1024
 POS_Y_MIN = 0
 POS_Y_MAX = 1024
+
+[node name="planet3" parent="cosmos" instance=ExtResource( 2 )]
+
+rect/scale = Vector2( 8, 8 )
+margin/left = 144.0
+margin/top = 680.0
+margin/right = 184.0
+margin/bottom = 720.0
+
+[node name="Sprite" parent="cosmos/planet3"]
+
+transform/pos = Vector2( -14, -18 )
+flip_h = true
+
+[node name="StaticBody2D" parent="cosmos/planet3"]
+
+editor/display_folded = true
+visibility/visible = false
+input/pickable = false
+collision/layers = 2
+collision/mask = 3
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Area2D" parent="cosmos/planet3"]
+
+editor/display_folded = true
+visibility/visible = false
+input/pickable = true
+space_override = 1
+gravity_point = true
+gravity_distance_scale = 500.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 1000.0
+linear_damp = 0.001
+angular_damp = 0.0
+collision/layers = 3
+collision/mask = 3
+
+[node name="CollisionShape2D" parent="cosmos/planet3/Area2D"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="center" type="CenterContainer" parent="."]
 
@@ -69,23 +121,23 @@ margin/bottom = 360.0
 
 transform/pos = Vector2( 0, -4 )
 transform/scale = Vector2( 8, 8 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="boctok-1" type="Sprite" parent="center/anchor"]
 
 transform/pos = Vector2( 488, -32 )
 transform/rot = 90.0
 transform/scale = Vector2( 8, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 flip_v = true
 
 [node name="nuke" type="Sprite" parent="center/anchor"]
 
 transform/pos = Vector2( 320, 80 )
 transform/scale = Vector2( 8, 8 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
-[node name="gagarin" parent="center/anchor" instance=ExtResource( 5 )]
+[node name="gagarin" parent="center/anchor" instance=ExtResource( 6 )]
 
 editor/display_folded = true
 rect/scale = Vector2( 8, 8 )
@@ -99,27 +151,28 @@ margin/bottom = 114.0
 visibility/blend_mode = 1
 transform/pos = Vector2( -304, -76 )
 transform/scale = Vector2( 8, 8 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 modulate = Color( 0.372549, 0.803922, 0.894118, 1 )
 
-[node name="Label" type="Label" parent="center/anchor"]
+[node name="ggj" type="Label" parent="center/anchor"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -208.0
-margin/top = 162.0
+margin/left = -280.0
+margin/top = 168.0
 margin/right = 152.0
-margin/bottom = 233.0
+margin/bottom = 239.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.372549, 0.803922, 0.894118, 1 )
 text = "GLOBAL GAME JAM\n2017"
+align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Label2" type="Label" parent="center/anchor"]
+[node name="tagline" type="Label" parent="center/anchor"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -139,4 +192,5 @@ lines_skipped = 0
 max_lines_visible = -1
 
 
+[editable path="cosmos/planet3"]
 [editable path="center/anchor/gagarin"]
