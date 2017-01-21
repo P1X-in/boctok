@@ -8,6 +8,7 @@ var BOOST = 1500
 var BOOST_FUEL = 6
 
 var GRAVITY_FACTOR = 100000000000
+var MAX_FUEL = 100
 
 var rotation = 0
 var current_acceleration = Vector2(0, 0)
@@ -15,7 +16,7 @@ var current_gravity = Vector2(0, 0)
 
 var engines = []
 
-var fuel = 10
+var fuel = 100
 
 var do_rotate = false
 var rotate_factor = 1
@@ -53,10 +54,10 @@ func _integrate_forces(s):
         engines_on["Left"] = true
         engines_on["Right"] = true
         self.fuel = self.fuel - step * 10 * self.BOOST_FUEL
-    elif self.fuel < 10:
-        self.fuel = self.fuel + step * 20
-        if self.fuel > 10:
-            self.fuel = 10
+    #elif self.fuel < 10:
+    #    self.fuel = self.fuel + step * 20
+    #    if self.fuel > 10:
+    #        self.fuel = 10
 
     self.current_gravity = s.get_total_gravity() * step * self.GRAVITY_FACTOR
     lv += self.current_gravity
