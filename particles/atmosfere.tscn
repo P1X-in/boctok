@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://particles/atmo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://particles/athmosfere_particle.png" type="Texture" id=2]
+
+[node name="Particles" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="atmosfere" parent="." instance=ExtResource( 1 )]
+
+visibility/self_opacity = 0.31
+visibility/behind_parent = false
+transform/scale = Vector2( 1, 1 )
+config/texture = ExtResource( 2 )
+params/spin_velocity = 4.0
+params/tangential_accel = 17.26
+params/initial_size = 1.8
+params/final_size = 1.9
+
+

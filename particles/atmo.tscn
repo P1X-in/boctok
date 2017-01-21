@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://particles/fire_particle.png" type="Texture" id=1]
+
+[sub_resource type="ColorRamp" id=1]
+
+offsets = FloatArray( 0, 0.1, 1 )
+colors = ColorArray( 1, 1, 1, 0, 0.886275, 0.371681, 0, 1, 1, 0.99115, 1, 0 )
+
+[node name="Fire2" type="Particles2D"]
+
+visibility/opacity = 0.09
+visibility/behind_parent = true
+visibility/blend_mode = 1
+transform/scale = Vector2( 6, 6 )
+config/amount = 32
+config/lifetime = 0.1
+config/time_scale = 0.107157
+config/half_extents = Vector2( 15, 15 )
+config/local_space = false
+config/texture = ExtResource( 1 )
+params/direction = 0.0
+params/spread = 0.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 180.0
+params/gravity_strength = 80.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 180.0
+params/initial_size = 6.0
+params/final_size = 10.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/initial_angle = 2.0
+color/color_ramp = SubResource( 1 )
+
+
