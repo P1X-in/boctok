@@ -11,6 +11,6 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="StaticBody2D"]
 
-transform/scale = Vector2( 0.55, 0.55 )
+transform/scale = Vector2( 0.6, 0.6 )
 
 
