@@ -24,7 +24,15 @@ var accelerate = false
 var accelerate_factor = 1
 var boost = false
 
+var reset_velocity = true
+
 func _integrate_forces(s):
+    if self.reset_velocity:
+        self.reset_velocity = false
+        s.set_linear_velocity(Vector2(0,0))
+        return
+
+
     var lv = s.get_linear_velocity()
     var step = s.get_step()
     self.current_acceleration = lv
@@ -74,3 +82,15 @@ func _ready():
         "Left" : engines.get_node("Left"),
         "Right" : engines.get_node("Right"),
     }
+
+func reset():
+    self.rotation = 0
+    self.current_acceleration = Vector2(0, 0)
+    self.current_gravity = Vector2(0, 0)
+    self.fuel = 100
+    self.do_rotate = false
+    self.rotate_factor = 1
+    self.accelerate = false
+    self.accelerate_factor = 1
+    self.boost = false
+    self.reset_velocity = true

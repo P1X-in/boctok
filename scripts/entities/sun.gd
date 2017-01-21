@@ -12,14 +12,15 @@ func _fixed_process(delta):
     for player in self.bag.players.players:
         distance = player.avatar.get_pos().distance_to(self.get_pos())
         if distance < self.SUN_KILL:
-            player.detach()
+            self.bag.board.end_game(player)
+
 
         if distance < self.DISTANCE_LIMIT:
             player.avatar.fuel += self.FUEL_GRANTED * delta
             if player.avatar.fuel > player.avatar.MAX_FUEL:
                 player.avatar.fuel = player.avatar.MAX_FUEL
         elif distance > self.KILL_LIMIT:
-            player.detach()
+            self.bag.board.end_game(player)
 
 
 

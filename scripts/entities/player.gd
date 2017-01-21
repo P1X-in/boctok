@@ -91,6 +91,7 @@ func unbind_gamepad():
 func reset():
     self.rocket_cooldown = false
     self.rocket_firing = false
+    self.avatar.reset()
 
 func bind_camera(viewport):
     self.camera.set_custom_viewport(viewport)

@@ -39,6 +39,10 @@ func spawn_players():
     self.players[0].spawn(Vector2(4000, 5000))
     self.players[1].spawn(Vector2(6000, 5000))
 
+func despawn_players():
+    for player in self.players:
+        player.detach()
+
 
 func reset():
     for player in self.players:

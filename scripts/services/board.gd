@@ -43,3 +43,10 @@ func clear_all_objects():
     for object in self.attached_objects:
         self.current_map.remove_child(self.attached_objects[object])
     self.attached_objects.clear()
+
+
+
+func end_game(looser):
+    self.bag.players.despawn_players()
+    self.bag.players.reset()
+    self.bag.input.switch_to_scheme("over")
