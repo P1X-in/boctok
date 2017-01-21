@@ -11,7 +11,6 @@ func _fixed_process(delta):
     var distance
     for player in self.bag.players.players:
         distance = player.avatar.get_pos().distance_to(self.get_pos())
-        print(distance)
         if distance < self.SUN_KILL:
             player.detach()
 

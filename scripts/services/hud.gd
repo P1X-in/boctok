@@ -11,6 +11,7 @@ var proximity_indicator
 
 var sun_position = Vector2(5000, 5000)
 const SUN_PROXIMITY_ALERT_DISTANCE = 400
+const TOO_FAR = 1500
 
 func _ready():
     self.fuel_gauge = self.get_node('huds/sensors/sensor1/arrow')
@@ -54,7 +55,8 @@ func update_ship_velocity(velocity_vector):
         self.movement_indicator.set_rot(velocity_vector.angle() + 3.14)
 
 func update_sun_warning(avatar):
-    if avatar.get_pos().distance_to(self.sun_position) <= self.SUN_PROXIMITY_ALERT_DISTANCE:
+    var distance = avatar.get_pos().distance_to(self.sun_position)
+    if distance <= self.SUN_PROXIMITY_ALERT_DISTANCE or distance >= self.TOO_FAR:
         self.proximity_indicator.show()
     else:
         self.proximity_indicator.hide()
