@@ -2,6 +2,7 @@ extends "res://scripts/entities/object.gd"
 
 var camera
 var hud
+var newspaper
 
 var player_id
 var gamepad_id = null
@@ -54,10 +55,13 @@ func spawn(initial_position):
 
 func attach():
     self.bag.processing.register(self)
+    self.newspaper.hide()
+    self.hud.show()
     .attach()
 
 func detach():
     self.bag.processing.remove(self)
+    self.hud.hide()
     .detach()
 
 func bind_keyboard():
@@ -103,6 +107,18 @@ func bind_camera(viewport):
 
 func bind_hud(hud):
     self.hud = hud
+
+func bind_newspaper(newspaper):
+    self.newspaper = newspaper
+
+func show_fail():
+    self.newspaper.show()
+    if self.player_id == 0:
+        self.newspaper.get_node('nyt').hide()
+        self.newspaper.get_node('pravda').show()
+    else:
+        self.newspaper.get_node('nyt').show()
+        self.newspaper.get_node('pravda').hide()
 
 func process(delta):
     hud.update_sun_indicator(self.avatar.get_pos())
