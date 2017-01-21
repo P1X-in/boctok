@@ -12,6 +12,7 @@ var schemes = {
         "any" : self.any_device_template.new(),
     },
     "over" : {
+        "keyboard" : self.keyboard_template.new(),
         "any" : self.any_device_template.new(),
     },
     "game" : {
@@ -40,5 +41,6 @@ func switch_to_scheme(scheme):
 func load_basic_input():
     self.schemes['intro']['any'].register_handler(preload("res://scripts/input/handlers/skip_intro_handler.gd").new(self.bag))
     self.schemes['game']['keyboard'].register_handler(preload("res://scripts/input/handlers/quit_game.gd").new())
+    self.schemes['over']['keyboard'].register_handler(preload("res://scripts/input/handlers/quit_game.gd").new())
     self.schemes['over']['any'].register_handler(preload("res://scripts/input/handlers/restart_game_any.gd").new(self.bag))
 
