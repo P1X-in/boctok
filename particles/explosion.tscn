@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://particles/explosion.png" type="Texture" id=1]
+
+[node name="explosion" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+config/amount = 64
+config/lifetime = 2.0
+config/time_scale = 6.0
+config/preprocess = 2.0
+config/emit_timeout = 2.4
+config/emitting = false
+config/explosiveness = 0.69
+config/texture = ExtResource( 1 )
+config/h_frames = 5
+params/direction = 0.0
+params/spread = 180.0
+params/linear_velocity = 9.64
+params/spin_velocity = 2.97
+params/orbit_velocity = 0.97
+params/gravity_direction = 0.03
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 2.0
+params/final_size = 3.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 0.28
+randomness/linear_velocity = 0.36
+randomness/spin_velocity = 0.47
+randomness/orbit_velocity = 0.98
+
+
