@@ -28,8 +28,8 @@ func is_keyboard_in_use():
     return false
 
 func spawn_players():
-    for player in self.players:
-        player.attach()
+    self.players[0].spawn(Vector2(4000, 5000))
+    self.players[1].spawn(Vector2(6000, 5000))
 
     self.players[0].bind_keyboard()
     self.players[0].bind_camera(self.bag.board.viewport_left)

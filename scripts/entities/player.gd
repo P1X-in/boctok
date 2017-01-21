@@ -30,6 +30,10 @@ func _init(bag, player_id).(bag):
         preload("res://scripts/input/handlers/player_boost_key.gd").new(self.bag, self, KEY_DOWN),
     ]
 
+func spawn(initial_position):
+    self.attach()
+    self.avatar.set_pos(initial_position)
+
 func attach():
     .attach()
 
