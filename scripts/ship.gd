@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var camera
+
 var ROTATE_STEP = 6
 var ROTATE_THRESHOLD = 6.28
 
@@ -9,6 +11,7 @@ var BOOST_FUEL = 6
 
 var GRAVITY_FACTOR = 100000000000
 var MAX_FUEL = 100
+var CAMERA_ZOOM_STEP = 0.2
 
 var rotation = 0
 var current_acceleration = Vector2(0, 0)
@@ -25,6 +28,7 @@ var accelerate_factor = 1
 var boost = false
 
 var reset_velocity = true
+var camera_zoom = 1
 
 func _integrate_forces(s):
     if self.reset_velocity:
@@ -64,6 +68,16 @@ func _integrate_forces(s):
         engines_on["Right"] = true
         self.fuel = self.fuel - step * 10 * self.BOOST_FUEL
 
+    if self.accelerate or self.boost:
+        self.camera_zoom += self.CAMERA_ZOOM_STEP * step
+        if self.camera_zoom > 2:
+            self.camera_zoom = 2
+    else:
+        self.camera_zoom -= self.CAMERA_ZOOM_STEP * step
+        if self.camera_zoom < 1:
+            self.camera_zoom = 1
+    self.camera.set_zoom(Vector2(self.camera_zoom, self.camera_zoom))
+
     self.current_gravity = s.get_total_gravity() * step * self.GRAVITY_FACTOR
     lv += self.current_gravity
     self.__engines_start(engines_on)
@@ -82,6 +96,7 @@ func _ready():
         "Left" : engines.get_node("Left"),
         "Right" : engines.get_node("Right"),
     }
+    self.camera = self.get_node('camera')
 
 func reset():
     self.rotation = 0
