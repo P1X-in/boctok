@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/ships/thrust.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ships/nuke_small.png" type="Texture" id=2]
+
+[node name="nuke" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -16.0
+margin/top = -16.0
+margin/right = 16.0
+margin/bottom = 16.0
+
+[node name="Thrust" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 16.0445, 22.3557 )
+transform/scale = Vector2( 0.3, 0.3 )
+config/emit_timeout = 0.0
+config/emitting = true
+
+[node name="sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+centered = false
+
+
