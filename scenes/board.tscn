@@ -117,9 +117,9 @@ text = "Yuri Gagarin"
 
 visibility/visible = false
 margin/left = 320.0
-margin/top = 320.0
+margin/top = 380.0
 margin/right = 360.0
-margin/bottom = 360.0
+margin/bottom = 420.0
 
 [node name="right" type="Control" parent="."]
 
@@ -198,9 +198,9 @@ text = "John Glenn"
 
 visibility/visible = false
 margin/left = 320.0
-margin/top = 320.0
+margin/top = 380.0
 margin/right = 360.0
-margin/bottom = 360.0
+margin/bottom = 420.0
 
 [node name="top_center" type="CenterContainer" parent="."]
 
