@@ -1,9 +1,11 @@
 var anim
 var list
 var random_animation
+var SEED = 0.777
 
 func _ready():
 	randomize()
+	rand_seed(self.SEED)
 	self.anim = self.get_node("anim")
 	self.list = self.anim.get_animation_list()
 	if randi()%100<75:
