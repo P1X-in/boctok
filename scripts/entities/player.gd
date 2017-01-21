@@ -1,6 +1,7 @@
 extends "res://scripts/entities/object.gd"
 
 var camera
+var hud
 
 var player_id
 var gamepad_id = null
@@ -35,7 +36,12 @@ func spawn(initial_position):
     self.avatar.set_pos(initial_position)
 
 func attach():
+    self.bag.processing.register(self)
     .attach()
+
+func detach():
+    self.bag.processing.remove(self)
+    .detach()
 
 func bind_keyboard():
     var keyboard = self.bag.input.schemes['game']['keyboard']
@@ -75,3 +81,12 @@ func reset():
 
 func bind_camera(viewport):
     self.camera.set_custom_viewport(viewport)
+
+func bind_hud(hud):
+    self.hud = hud
+
+func process(delta):
+    hud.update_sun_indicator(self.avatar.get_pos())
+    hud.update_fuel(self.avatar.fuel)
+    hud.update_gravity(self.avatar.current_gravity)
+    hud.update_ship_velocity(self.avatar.current_acceleration)

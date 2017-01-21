@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://scenes/gui/panel.png" type="Texture" id=1]
-[ext_resource path="res://scenes/share/pico8.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/services/hud.gd" type="Script" id=1]
+[ext_resource path="res://scenes/gui/panel.png" type="Texture" id=2]
+[ext_resource path="res://scenes/share/pico8.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 8
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 2 )
+font/font = ExtResource( 3 )
 
 [node name="panel" type="Control"]
 
@@ -20,9 +21,11 @@ margin/left = -128.0
 margin/top = 0.0
 margin/right = 128.0
 margin/bottom = 96.0
+script/script = ExtResource( 1 )
 
 [node name="background" type="GridContainer" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -50,7 +53,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -71,7 +74,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top2"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -92,7 +95,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top4"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -113,7 +116,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top5"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -134,7 +137,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top6"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -155,7 +158,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top8"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -176,7 +179,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top11"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -197,7 +200,7 @@ margin/bottom = 32.0
 
 [node name="sprite" type="Sprite" parent="background/top12"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -218,7 +221,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -239,7 +242,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle2"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -259,7 +262,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle3"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -279,7 +282,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle7"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -299,7 +302,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle8"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -319,7 +322,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle4"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -339,7 +342,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle5"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -359,7 +362,7 @@ margin/bottom = 64.0
 
 [node name="sprite" type="Sprite" parent="background/middle6"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -380,7 +383,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -401,7 +404,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom2"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -422,7 +425,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom4"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -443,7 +446,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom5"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -463,7 +466,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom3"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -483,7 +486,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom6"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -504,7 +507,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom12"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -525,7 +528,7 @@ margin/bottom = 96.0
 
 [node name="sprite" type="Sprite" parent="background/bottom8"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -544,7 +547,6 @@ margin/bottom = 40.0
 
 [node name="sun" type="Control" parent="huds"]
 
-editor/display_folded = true
 rect/min_size = Vector2( 40, 64 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -558,7 +560,7 @@ margin/bottom = 70.0
 [node name="tarcza" type="Sprite" parent="huds/sun"]
 
 transform/pos = Vector2( 5, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -567,7 +569,7 @@ frame = 12
 [node name="arrow" type="Sprite" parent="huds/sun"]
 
 transform/pos = Vector2( 21, 16 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 vframes = 4
 hframes = 8
 frame = 16
@@ -593,6 +595,7 @@ max_lines_visible = -1
 
 [node name="sensors" type="HBoxContainer" parent="huds"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -605,6 +608,7 @@ alignment = 0
 
 [node name="sensor1" type="Control" parent="huds/sensors"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 40, 64 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -618,7 +622,7 @@ margin/bottom = 64.0
 [node name="tarcza" type="Sprite" parent="huds/sensors/sensor1"]
 
 transform/pos = Vector2( 5, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -628,7 +632,7 @@ frame = 17
 
 transform/pos = Vector2( 21, 16 )
 transform/rot = 90.0
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 vframes = 4
 hframes = 8
 frame = 16
@@ -636,7 +640,7 @@ frame = 16
 [node name="sprite3" type="Sprite" parent="huds/sensors/sensor1"]
 
 transform/pos = Vector2( 0, 33 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -645,7 +649,7 @@ frame = 13
 [node name="sprite4" type="Sprite" parent="huds/sensors/sensor1"]
 
 transform/pos = Vector2( 8, 33 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -663,7 +667,7 @@ margin/right = 41.0
 margin/bottom = 66.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "label"
+text = "FUEL"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -690,6 +694,7 @@ max_lines_visible = -1
 
 [node name="sensor2" type="Control" parent="huds/sensors"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 40, 64 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -703,16 +708,16 @@ margin/bottom = 64.0
 [node name="tarcza" type="Sprite" parent="huds/sensors/sensor2"]
 
 transform/pos = Vector2( 5, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
-frame = 17
+frame = 12
 
 [node name="arrow" type="Sprite" parent="huds/sensors/sensor2"]
 
 transform/pos = Vector2( 21, 16 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 vframes = 4
 hframes = 8
 frame = 16
@@ -720,7 +725,7 @@ frame = 16
 [node name="sprite3" type="Sprite" parent="huds/sensors/sensor2"]
 
 transform/pos = Vector2( 0, 33 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -729,7 +734,7 @@ frame = 13
 [node name="sprite4" type="Sprite" parent="huds/sensors/sensor2"]
 
 transform/pos = Vector2( 8, 33 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -747,7 +752,7 @@ margin/right = 41.0
 margin/bottom = 66.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "label"
+text = "GRAV"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -774,6 +779,7 @@ max_lines_visible = -1
 
 [node name="sensor3" type="Control" parent="huds/sensors"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 40, 64 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -787,17 +793,17 @@ margin/bottom = 64.0
 [node name="tarcza" type="Sprite" parent="huds/sensors/sensor3"]
 
 transform/pos = Vector2( 5, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
-frame = 17
+frame = 12
 
 [node name="arrow" type="Sprite" parent="huds/sensors/sensor3"]
 
 transform/pos = Vector2( 21, 16 )
 transform/rot = -45.0
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 vframes = 4
 hframes = 8
 frame = 16
@@ -805,7 +811,7 @@ frame = 16
 [node name="sprite3" type="Sprite" parent="huds/sensors/sensor3"]
 
 transform/pos = Vector2( 0, 33 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -814,7 +820,7 @@ frame = 13
 [node name="sprite4" type="Sprite" parent="huds/sensors/sensor3"]
 
 transform/pos = Vector2( 8, 33 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -832,7 +838,7 @@ margin/right = 41.0
 margin/bottom = 66.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "label"
+text = "SHIP"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -859,6 +865,7 @@ max_lines_visible = -1
 
 [node name="sensors_small" type="VBoxContainer" parent="huds"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -885,7 +892,7 @@ margin/bottom = 28.0
 [node name="sprite3" type="Sprite" parent="huds/sensors_small/sensor_small1"]
 
 transform/pos = Vector2( 2, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -894,7 +901,7 @@ frame = 18
 [node name="left" type="Sprite" parent="huds/sensors_small/sensor_small1"]
 
 transform/pos = Vector2( 16, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -903,7 +910,7 @@ frame = 19
 [node name="sprite4" type="Sprite" parent="huds/sensors_small/sensor_small1"]
 
 transform/pos = Vector2( 36, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -912,7 +919,7 @@ frame = 18
 [node name="right" type="Sprite" parent="huds/sensors_small/sensor_small1"]
 
 transform/pos = Vector2( 36, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -971,7 +978,7 @@ margin/bottom = 62.0
 [node name="sprite3" type="Sprite" parent="huds/sensors_small/sensor_small2"]
 
 transform/pos = Vector2( 3, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8
@@ -980,7 +987,7 @@ frame = 13
 [node name="sprite4" type="Sprite" parent="huds/sensors_small/sensor_small2"]
 
 transform/pos = Vector2( 35, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 vframes = 4
 hframes = 8

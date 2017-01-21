@@ -1,52 +1,52 @@
-extends "res://scripts/services/abstract_screen.gd"
+extends Control
 
-var time_label
+var fuel_gauge
+var fuel_meter
+var gravity_indicator
+var gravity_meter
+var movement_indicator
+var movement_meter
+var sun_indicator
 
-var player_1_panel
-var player_2_panel
-var arrow
-var loose
 
-func _init_bag(bag, container):
-    ._init_bag(bag, container)
-    self.screen_scene = self.bag.board.screen_scene.get_node('hud')
-    self.time_label = self.screen_scene.get_node('time/time_string')
-    self.player_1_panel = self.screen_scene.get_node('p1')
-    self.player_2_panel = self.screen_scene.get_node('p2')
-    self.arrow = self.screen_scene.get_node('arrow')
-    self.loose = self.screen_scene.get_node('lose')
+var sun_position = Vector2(5000, 5000)
 
-func set_timer(time_left):
-    self.time_label.set_text(str(time_left))
+func _ready():
+    self.fuel_gauge = self.get_node('huds/sensors/sensor1/arrow')
+    self.fuel_meter = self.get_node('huds/sensors/sensor1/value')
+    self.gravity_indicator = self.get_node('huds/sensors/sensor2/arrow')
+    self.gravity_meter = self.get_node('huds/sensors/sensor2/value')
+    self.movement_indicator = self.get_node('huds/sensors/sensor3/arrow')
+    self.movement_meter = self.get_node('huds/sensors/sensor3/value')
+    self.sun_indicator = self.get_node('huds/sun/arrow')
 
-func update_timer():
-    self.set_timer(self.bag.board.time_left)
+func update_sun_indicator(ship_position):
+    var difference = self.sun_position - ship_position
 
-func update_player_hp(player_id, hp):
-    var panel
-    if player_id == 0:
-        panel = self.player_1_panel
+    self.sun_indicator.set_rot(difference.angle() + 3.14)
+
+func update_fuel(amount):
+    self.fuel_meter.set_text(str(int(amount)))
+
+    self.fuel_gauge.set_rot(9 - ((amount/100) * 5))
+
+
+func update_gravity(gravity_vector):
+    if gravity_vector == Vector2(0, 0):
+        self.gravity_indicator.hide()
+        self.gravity_meter.set_text('---')
     else:
-        panel = self.player_2_panel
+        self.gravity_indicator.show()
+        gravity_vector = gravity_vector * 100
+        self.gravity_meter.set_text(str(int(gravity_vector.length())))
+        self.gravity_indicator.set_rot(gravity_vector.angle() + 3.14)
 
-    var bottle1 = panel.get_node('hearth')
-    var bottle2 = panel.get_node('hearth1')
 
-    if hp > 5:
-        bottle1.set_frame(10 - hp)
-        bottle2.set_frame(0)
+func update_ship_velocity(velocity_vector):
+    if velocity_vector == Vector2(0, 0):
+        self.movement_indicator.hide()
+        self.movement_meter.set_text('---')
     else:
-        bottle1.set_frame(4)
-        bottle2.set_frame(min(5 - hp, 4))
-
-func show_arrow():
-    self.arrow.show()
-
-func hide_arrow():
-    self.arrow.hide()
-
-func show_loose():
-    self.loose.show()
-
-func hide_loose():
-    self.loose.hide()
+        self.movement_indicator.show()
+        self.movement_meter.set_text(str(int(velocity_vector.length())))
+        self.movement_indicator.set_rot(velocity_vector.angle() + 3.14)

@@ -15,6 +15,14 @@ func bind_players():
         self.player_template.new(self.bag, 1),
     ]
 
+    self.players[0].bind_keyboard()
+    self.players[1].bind_gamepad(1)
+    self.players[0].bind_camera(self.bag.board.viewport_left)
+    self.players[0].bind_hud(self.bag.board.hud_left)
+    self.players[1].bind_gamepad(0)
+    self.players[1].bind_camera(self.bag.board.viewport_right)
+    self.players[1].bind_hud(self.bag.board.hud_right)
+
 func is_gamepad_in_use(id):
     for player in self.players:
         if player.gamepad_id == id:
@@ -31,10 +39,6 @@ func spawn_players():
     self.players[0].spawn(Vector2(4000, 5000))
     self.players[1].spawn(Vector2(6000, 5000))
 
-    self.players[0].bind_keyboard()
-    self.players[0].bind_camera(self.bag.board.viewport_left)
-    self.players[1].bind_gamepad(0)
-    self.players[1].bind_camera(self.bag.board.viewport_right)
 
 func reset():
     for player in self.players:
