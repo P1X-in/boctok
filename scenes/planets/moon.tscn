@@ -9,9 +9,17 @@
 
 texture = ExtResource( 2 )
 
+[node name="StaticBody2D" parent="."]
+
+editor/display_folded = true
+
 [node name="CollisionShape2D" parent="StaticBody2D"]
 
 transform/scale = Vector2( 0.3, 0.3 )
+
+[node name="Area2D" parent="."]
+
+editor/display_folded = true
 
 [node name="CollisionShape2D" parent="Area2D"]
 
