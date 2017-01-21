@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scenes/space_background/cosmos.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/space.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/share/logo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/gui/panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/share/logo.tscn" type="PackedScene" id=4]
 
 [node name="board" type="Control"]
 
@@ -22,12 +23,13 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 2.0
 margin/right = 640.0
-margin/bottom = 720.0
+margin/bottom = 722.0
 
 [node name="Viewport" type="Viewport" parent="left"]
 
+editor/display_folded = true
 rect = Rect2( 0, 0, 640, 720 )
 own_world = false
 world = null
@@ -58,13 +60,42 @@ margin/bottom = 0.0
 
 [node name="cosmos" parent="left/Viewport/mount" instance=ExtResource( 1 )]
 
-MAX_STARS = 2000
-POS_X_MIN = -2000
-POS_X_MAX = 2000
-POS_Y_MIN = -2000
-POS_Y_MAX = 2000
+MAX_STARS = 2048
+POS_X_MIN = -2048
+POS_X_MAX = 2048
+POS_Y_MIN = -2048
+POS_Y_MAX = 2048
 
 [node name="space" parent="left/Viewport/mount" instance=ExtResource( 2 )]
+
+[node name="hud" type="CenterContainer" parent="left"]
+
+editor/display_folded = true
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 128.0
+margin/right = 0.0
+margin/bottom = 128.0
+use_top_left = false
+
+[node name="anchor" type="Control" parent="left/hud"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 320.0
+margin/top = 0.0
+margin/right = 320.0
+margin/bottom = 0.0
+
+[node name="panel" parent="left/hud/anchor" instance=ExtResource( 3 )]
 
 [node name="right" type="Control" parent="."]
 
@@ -94,7 +125,36 @@ audio_listener/enable_3d = false
 physics/object_picking = false
 gui/disable_input = false
 
-[node name="logo" parent="." instance=ExtResource( 3 )]
+[node name="hud" type="CenterContainer" parent="right"]
+
+editor/display_folded = true
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 128.0
+margin/right = 0.0
+margin/bottom = 128.0
+use_top_left = false
+
+[node name="anchor" type="Control" parent="right/hud"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 320.0
+margin/top = 0.0
+margin/right = 320.0
+margin/bottom = 0.0
+
+[node name="panel" parent="right/hud/anchor" instance=ExtResource( 3 )]
+
+[node name="logo" parent="." instance=ExtResource( 4 )]
 
 margin/left = 16.0
 margin/top = 16.0

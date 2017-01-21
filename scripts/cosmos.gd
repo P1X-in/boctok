@@ -1,6 +1,6 @@
 extends Control
 
-var SEED = 0.777
+var SEED = 0.123
 export var MAX_STARS = 100
 export var POS_X_MIN = 0
 export var POS_X_MAX = 1024
