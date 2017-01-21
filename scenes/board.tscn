@@ -71,7 +71,6 @@ POS_Y_MAX = 2048
 
 [node name="hud" type="CenterContainer" parent="left"]
 
-editor/display_folded = true
 anchor/top = 1
 anchor/right = 1
 anchor/bottom = 1
