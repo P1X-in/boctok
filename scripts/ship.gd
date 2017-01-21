@@ -11,6 +11,7 @@ var GRAVITY_FACTOR = 100000000000
 
 var rotation = 0
 var current_acceleration = Vector2(0, 0)
+var current_gravity = Vector2(0, 0)
 
 var engines = []
 
@@ -57,7 +58,8 @@ func _integrate_forces(s):
         if self.fuel > 10:
             self.fuel = 10
 
-    lv += s.get_total_gravity() * step * self.GRAVITY_FACTOR
+    self.current_gravity = s.get_total_gravity() * step * self.GRAVITY_FACTOR
+    lv += self.current_gravity
     self.current_acceleration = lv
     self.__engines_start(engines_on)
     s.set_linear_velocity(lv)
