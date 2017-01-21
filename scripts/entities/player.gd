@@ -29,6 +29,10 @@ func _init(bag, player_id).(bag):
         preload("res://scripts/input/handlers/player_accelerate_button.gd").new(self.bag, self, JOY_BUTTON_0),
         preload("res://scripts/input/handlers/player_boost_button.gd").new(self.bag, self, JOY_BUTTON_1),
         preload("res://scripts/input/handlers/rocket_launch_button.gd").new(self.bag, self, JOY_BUTTON_2),
+        preload("res://scripts/input/handlers/rocket_launch_trigger.gd").new(self.bag, self, 4),
+        preload("res://scripts/input/handlers/rocket_launch_trigger.gd").new(self.bag, self, 5),
+        preload("res://scripts/input/handlers/rocket_launch_trigger.gd").new(self.bag, self, 6),
+        preload("res://scripts/input/handlers/rocket_launch_trigger.gd").new(self.bag, self, 7),
     ]
 
     self.keyboard_handlers = [
@@ -111,7 +115,9 @@ func fire_rocket():
     var rocket = self.rocket_template.instance()
     var position = self.avatar.get_pos()
     var rocket_offset = Vector2(0, -1).rotated(self.avatar.rotation)
-    var rocket_position = position + rocket_offset * 50
+    var rocket_position = position + rocket_offset * 60
+
+    print(rocket_offset)
 
     rocket.initial_velocity = self.avatar.current_acceleration + rocket_offset * 500
 
