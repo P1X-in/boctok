@@ -119,12 +119,11 @@ func fire_rocket():
     var rocket_offset = Vector2(0, -1).rotated(self.avatar.rotation)
     var rocket_position = position + rocket_offset * 60
 
-    print(rocket_offset)
-
     rocket.initial_velocity = self.avatar.current_acceleration + rocket_offset * 500
 
     self.bag.board.attach_object(rocket)
     rocket.set_pos(rocket_position)
+    rocket.set_rot(rocket.initial_velocity.angle() + 3.14)
 
     self.rocket_cooldown = true
     self.bag.timers.set_timeout(self.ROCKET_COOLDOWN_TIME, self, "rocket_cooldown_done")
