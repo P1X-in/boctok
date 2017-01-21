@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/thrust.tscn" type="PackedScene" id=1]
+
+[node name="Engines" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="Main" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -0.5, 32 )
+transform/scale = Vector2( 0.3125, 1 )
+config/amount = 120
+params/spread = 2.18
+
+[node name="Left" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -13.75, 27 )
+transform/scale = Vector2( 0.195312, 1 )
+config/lifetime = 0.1
+params/initial_size = 1.5
+params/final_size = 1.0
+
+[node name="Right" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 14, 27 )
+transform/scale = Vector2( 0.1875, 1 )
+config/lifetime = 0.1
+params/initial_size = 1.5
+params/final_size = 1.0
+
+
