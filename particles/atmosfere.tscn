@@ -19,6 +19,7 @@ margin/bottom = 40.0
 visibility/self_opacity = 0.43
 visibility/behind_parent = false
 transform/scale = Vector2( 1, 1 )
+config/amount = 12
 config/texture = ExtResource( 2 )
 params/spin_velocity = 4.0
 params/tangential_accel = 17.26
