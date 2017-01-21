@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-
 var ROTATE_STEP = 6
 var ROTATE_THRESHOLD = 6.28
 

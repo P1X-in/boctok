@@ -1,5 +1,7 @@
 extends "res://scripts/entities/object.gd"
 
+var camera
+
 var player_id
 var gamepad_id = null
 var keyboard_use = null
@@ -11,6 +13,7 @@ func _init(bag, player_id).(bag):
     self.bag = bag
     self.player_id = player_id
     self.avatar = preload("res://scenes/ships/ship.tscn").instance()
+    self.camera = self.avatar.get_node('camera')
 
     self.gamepad_handlers = [
         preload("res://scripts/input/handlers/player_rotate_axis.gd").new(self.bag, self, 0),
@@ -67,3 +70,6 @@ func unbind_gamepad():
 
 func reset():
     return
+
+func bind_camera(viewport):
+    self.camera.set_custom_viewport(viewport)

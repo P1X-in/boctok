@@ -1,5 +1,8 @@
 extends "res://scripts/services/abstract_screen.gd"
 
+var viewport_left
+var viewport_right
+
 var attached_objects = {}
 var current_map = null
 
@@ -7,8 +10,12 @@ var mount
 
 func _init():
     self.screen_scene = preload("res://scenes/board.tscn").instance()
-    self.mount = self.screen_scene.get_node('Viewport/mount')
+    self.viewport_left = self.screen_scene.get_node('left/Viewport')
+    self.viewport_right = self.screen_scene.get_node('right/Viewport')
+    self.mount = self.viewport_left.get_node('mount')
     self.current_map = self.mount.get_node('space')
+
+    self.viewport_right.set_world_2d(self.viewport_left.get_world_2d())
 
 func reset():
     self.clear_all_objects()

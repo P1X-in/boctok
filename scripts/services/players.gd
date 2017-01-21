@@ -29,6 +29,7 @@ func is_keyboard_in_use():
 func spawn_players():
     for player in self.players:
         player.attach()
+        player.bind_camera(self.bag.board.viewport_right)
 
 func reset():
     for player in self.players:
