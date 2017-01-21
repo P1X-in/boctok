@@ -10,6 +10,8 @@ var keyboard_use = null
 var gamepad_handlers = []
 var keyboard_handlers = []
 
+var boctok_template = preload("res://scenes/ships/ship.tscn")
+var mercury_template = preload("res://scenes/ships/mercury.tscn")
 
 var rocket_template = preload("res://scenes/ships/rocket.tscn")
 var rocket_cooldown = false
@@ -19,7 +21,10 @@ var ROCKET_COOLDOWN_TIME = 0.1
 func _init(bag, player_id).(bag):
     self.bag = bag
     self.player_id = player_id
-    self.avatar = preload("res://scenes/ships/ship.tscn").instance()
+    if player_id == 0:
+        self.avatar = self.boctok_template.instance()
+    else:
+        self.avatar = self.mercury_template.instance()
     self.camera = self.avatar.get_node('camera')
 
     self.gamepad_handlers = [
