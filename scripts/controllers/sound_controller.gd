@@ -9,6 +9,7 @@ var music_volume = 1.0
 var samples = [
     ['rocket_bang', preload('res://scenes/share/rocket_exploded.wav')],
     ['ship_die', preload('res://scenes/share/ship_die.wav')],
+    ['rocket_launch', preload('res://scenes/share/rocket_launch.wav')],
 ]
 
 var soundtracks = {}

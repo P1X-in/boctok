@@ -152,5 +152,7 @@ func fire_rocket():
     self.rocket_cooldown = true
     self.bag.timers.set_timeout(self.ROCKET_COOLDOWN_TIME, self, "rocket_cooldown_done")
 
+    self.bag.sound.play('rocket_launch')
+
 func rocket_cooldown_done():
     self.rocket_cooldown = false
