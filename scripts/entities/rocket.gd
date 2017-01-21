@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var bag
+
 var GRAVITY_FACTOR = 100000000000
 
 var current_acceleration = Vector2(0, 0)
@@ -36,7 +38,7 @@ func _integrate_forces(s):
     self.__engines_start(engines_on)
 
 func _colliding_body(body):
-    print('boom')
+    self.bag.sound.play('rocket_bang')
     self.queue_free()
 
 func __engines_start(engines):
@@ -45,6 +47,7 @@ func __engines_start(engines):
             self.engines[engine].set_emitting(true)
 
 func _ready():
+    self.bag = self.get_node("/root/boctok").bag
     set_fixed_process(true)
     var engines = self.get_node("Engines")
     self.engines = {

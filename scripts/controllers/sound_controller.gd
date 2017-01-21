@@ -6,7 +6,10 @@ var sample_player = SamplePlayer.new()
 var sound_volume = 0.5
 var music_volume = 1.0
 
-var samples = []
+var samples = [
+    ['rocket_bang', preload('res://scenes/share/rocket_exploded.wav')],
+    ['ship_die', preload('res://scenes/share/ship_die.wav')],
+]
 
 var soundtracks = {}
 
@@ -15,6 +18,8 @@ func _init_bag(bag, mount):
 
     self.sample_player.set_sample_library(SampleLibrary.new())
     self.sample_player.set_polyphony(10)
+
+    mount.add_child(self.sample_player)
 
     sample_player.set_default_volume_db(self.sound_volume)
     self.load_samples()

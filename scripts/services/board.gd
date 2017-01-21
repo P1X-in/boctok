@@ -11,6 +11,7 @@ var attached_objects = {}
 var current_map = null
 
 var mount
+var ready = true
 
 func _init():
     self.screen_scene = preload("res://scenes/board.tscn").instance()
@@ -27,7 +28,8 @@ func _init():
     self.viewport_right.set_world_2d(self.viewport_left.get_world_2d())
 
 func reset():
-    self.clear_all_objects()
+    #self.clear_all_objects()
+    self.ready = true
 
 
 func attach_object(object):
@@ -52,7 +54,12 @@ func clear_all_objects():
 
 
 func end_game(looser):
+    if not self.ready:
+        return
+
+    self.ready = false
     self.bag.players.despawn_players()
     self.bag.players.reset()
     self.bag.input.switch_to_scheme("over")
     looser.show_fail()
+    self.bag.sound.play('ship_die')

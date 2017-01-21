@@ -7,6 +7,7 @@ func can_handle(event):
 
 func handle(event):
     self.bag.input.switch_to_scheme("game")
+    self.bag.board.reset()
     self.bag.players.spawn_players()
 
 func _init(bag):
