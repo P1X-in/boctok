@@ -17,7 +17,7 @@ func _integrate_forces(s):
     var lv = s.get_linear_velocity()
     var step = s.get_step()
 
-    self.set_rot(lv.angle())
+    self.set_rot(lv.angle() + 3.14)
 
     self.current_gravity = s.get_total_gravity() * step * self.GRAVITY_FACTOR
     lv += self.current_gravity
