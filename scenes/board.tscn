@@ -115,12 +115,6 @@ text = "Yuri Gagarin"
 
 [node name="newspaper" parent="left" instance=ExtResource( 5 )]
 
-visibility/visible = false
-margin/left = 320.0
-margin/top = 380.0
-margin/right = 360.0
-margin/bottom = 420.0
-
 [node name="right" type="Control" parent="."]
 
 focus/ignore_mouse = false
@@ -195,12 +189,6 @@ margin/right = 448.0
 text = "John Glenn"
 
 [node name="newspaper" parent="right" instance=ExtResource( 5 )]
-
-visibility/visible = false
-margin/left = 320.0
-margin/top = 380.0
-margin/right = 360.0
-margin/bottom = 420.0
 
 [node name="top_center" type="CenterContainer" parent="."]
 
