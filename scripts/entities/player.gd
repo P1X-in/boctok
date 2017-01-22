@@ -141,7 +141,6 @@ func fire_rocket():
     var position = self.avatar.get_pos()
     var starting_vector = Vector2(0, -1)
     starting_vector.x = ((randi() % 101) - 50) / 900.0
-    print(starting_vector)
     var rocket_offset = starting_vector.rotated(self.avatar.rotation)
     var rocket_position = position + rocket_offset * 60
 
