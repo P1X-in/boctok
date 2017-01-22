@@ -20,7 +20,9 @@ func execute_timeout(object, method, args, timer):
     self.container.remove_child(timer)
     timer.disconnect("timeout", self, "execute_timeout")
 
-    if args.size() > 0:
+    if args.size() == 1:
+        object.call(method, args[0])
+    elif args.size() > 1:
         object.call(method, args)
     else:
         object.call(method)

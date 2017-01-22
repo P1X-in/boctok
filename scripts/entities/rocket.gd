@@ -43,6 +43,12 @@ func _integrate_forces(s):
 func _colliding_body(body):
     if body extends self.ship and body.player_id != self.owner:
         self.bag.players.players[self.owner].score += 10
+
+    if body extends self.ship:
+        var device_id = self.bag.players.players[body.player_id].gamepad_id
+        Input.start_joy_vibration(device_id, 1, 0)
+        self.bag.timers.set_timeout(0.2, Input, 'stop_joy_vibration', [device_id])
+
     self.bag.sound.play('rocket_bang')
     self.bag.board.add_explosion(self.get_pos())
     self.queue_free()
