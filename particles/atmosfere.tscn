@@ -16,6 +16,7 @@ margin/bottom = 40.0
 
 [node name="atmosfere" parent="." instance=ExtResource( 1 )]
 
+visibility/opacity = 0.5
 visibility/self_opacity = 0.43
 visibility/behind_parent = false
 transform/scale = Vector2( 1, 1 )
