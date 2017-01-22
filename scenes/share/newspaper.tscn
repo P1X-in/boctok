@@ -64,4 +64,24 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Label" type="Label" parent="."]
+
+anchor/top = 3
+anchor/right = 1
+anchor/bottom = 3
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -96.0
+margin/top = -160.0
+margin/right = -96.0
+margin/bottom = -180.0
+custom_fonts/font = ExtResource( 2 )
+text = "RESPAWNING..."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 
