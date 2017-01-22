@@ -9,12 +9,12 @@
 [ext_resource path="res://scenes/share/p1x_pixelart.png" type="Texture" id=7]
 [ext_resource path="res://scenes/share/pico8.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 500.0
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 font/size = 24
 extra_spacing/bottom = 4
@@ -87,7 +87,7 @@ collision/mask = 3
 
 [node name="CollisionShape2D" parent="cosmos/planet3/Area2D"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -164,7 +164,7 @@ margin/left = -280.0
 margin/top = 168.0
 margin/right = 152.0
 margin/bottom = 239.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.372549, 0.803922, 0.894118, 1 )
 text = "GLOBAL GAME JAM\n2017"
 align = 2
@@ -182,9 +182,9 @@ margin/left = -514.0
 margin/top = -201.0
 margin/right = 238.0
 margin/bottom = -167.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.372549, 0.803922, 0.894118, 1 )
-text = "In space, no one can hear you scream"
+text = "In space, no one can hear you swear"
 align = 1
 uppercase = true
 percent_visible = 1.0
