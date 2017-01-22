@@ -177,14 +177,14 @@ func swear():
 
     randomize()
     var suffix
-    var item 
+    var item
     if self.player_id == 0:
         suffix = "ru_"
     else:
         suffix = "en_"
     item = 'swear_' + suffix + str(randi() % 8 + 1)
-    if self.bag.sound.can_play_sound():
-        self.bag.sound.play(item)
+
+    self.bag.sound.play(item)
 
     self.swear_cooldown = true
     self.bag.timers.set_timeout(self.SWEAR_COOLDOWN_TIME, self, "swear_cooldown_done")
