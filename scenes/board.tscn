@@ -9,17 +9,20 @@
 
 [node name="board" type="Control"]
 
+anchor/right = 1
+anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 2.0
-margin/top = -1.0
-margin/right = 1282.0
-margin/bottom = 719.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
 
 [node name="left" type="Control" parent="."]
 
+anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -27,7 +30,7 @@ size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 640.0
-margin/bottom = 720.0
+margin/bottom = 0.0
 
 [node name="Viewport" type="Viewport" parent="left"]
 
@@ -117,14 +120,17 @@ text = "Yuri Gagarin"
 
 [node name="right" type="Control" parent="."]
 
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 640.0
 margin/top = 0.0
-margin/right = 1280.0
-margin/bottom = 720.0
+margin/right = 0.0
+margin/bottom = 0.0
 
 [node name="Viewport" type="Viewport" parent="right"]
 
