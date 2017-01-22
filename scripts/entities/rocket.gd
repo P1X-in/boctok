@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var bag
+var ship = preload("res://scripts/ship.gd")
 
 var GRAVITY_FACTOR = 100000000000
 
@@ -40,6 +41,8 @@ func _integrate_forces(s):
     self.__engines_start(engines_on)
 
 func _colliding_body(body):
+    if body extends self.ship and body.player_id != self.owner:
+        self.bag.players.players[self.owner].score += 10
     self.bag.sound.play('rocket_bang')
     self.bag.board.add_explosion(self.get_pos())
     self.queue_free()

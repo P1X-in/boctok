@@ -8,6 +8,7 @@ var movement_indicator
 var movement_meter
 var sun_indicator
 var proximity_indicators
+var score
 
 var sun_position = Vector2(5000, 5000)
 const SUN_PROXIMITY_ALERT_DISTANCE = 400
@@ -25,6 +26,7 @@ func _ready():
         self.get_node('huds/proximity/achtung_ru'),
         self.get_node('huds/proximity/achtung_en')
     ]
+    self.score = self.get_node('huds/sensors_small/sensor_small2/value')
 
 func update_sun_indicator(ship_position):
     var difference = self.sun_position - ship_position
@@ -66,3 +68,6 @@ func update_sun_warning(player):
         self.proximity_indicators[0].hide()
         self.proximity_indicators[1].hide()
         return false
+
+func update_score(score):
+    self.score.set_text(str(score))

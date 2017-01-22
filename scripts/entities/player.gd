@@ -28,6 +28,7 @@ func _init(bag, player_id).(bag):
         self.avatar = self.boctok_template.instance()
     else:
         self.avatar = self.mercury_template.instance()
+    self.avatar.player_id = player_id
     self.camera = self.avatar.get_node('camera')
 
     self.gamepad_handlers = [
@@ -128,6 +129,8 @@ func process(delta):
     hud.update_fuel(self.avatar.fuel)
     hud.update_gravity(self.avatar.current_gravity)
     hud.update_ship_velocity(self.avatar.current_acceleration)
+    hud.update_score(self.score)
+
     if hud.update_sun_warning(self):
         self.swear()
 

@@ -29,6 +29,7 @@ var boost = false
 
 var reset_velocity = true
 var camera_zoom = 1
+var player_id
 
 func _integrate_forces(s):
     if self.reset_velocity:

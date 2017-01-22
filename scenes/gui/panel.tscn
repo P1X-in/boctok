@@ -868,7 +868,6 @@ max_lines_visible = -1
 
 [node name="sensors_small" type="VBoxContainer" parent="huds"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -1026,7 +1025,7 @@ margin/right = 67.0
 margin/bottom = 31.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "label"
+text = "SCORE"
 align = 1
 valign = 1
 percent_visible = 1.0

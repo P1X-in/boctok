@@ -34,7 +34,7 @@ func _init_bag(bag, mount):
     self.bag = bag
 
     self.sample_player.set_sample_library(SampleLibrary.new())
-    self.sample_player.set_polyphony(10)
+    self.sample_player.set_polyphony(64)
 
     mount.add_child(self.sample_player)
 
