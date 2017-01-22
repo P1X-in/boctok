@@ -48,6 +48,7 @@ func _colliding_body(body):
         var device_id = self.bag.players.players[body.player_id].gamepad_id
         Input.start_joy_vibration(device_id, 1, 0)
         self.bag.timers.set_timeout(0.2, Input, 'stop_joy_vibration', [device_id])
+        self.bag.players.players[body.player_id].swear()
 
     self.bag.sound.play('rocket_bang')
     self.bag.board.add_explosion(self.get_pos())

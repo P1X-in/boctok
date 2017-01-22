@@ -16,8 +16,10 @@ var mercury_template = preload("res://scenes/ships/mercury.tscn")
 
 var rocket_template = preload("res://scenes/ships/rocket.tscn")
 var rocket_cooldown = false
+var swear_cooldown = false
 var rocket_firing = false
 var ROCKET_COOLDOWN_TIME = 0.1
+var SWEAR_COOLDOWN_TIME = 2
 
 var score = 0
 
@@ -42,6 +44,8 @@ func _init(bag, player_id).(bag):
         preload("res://scripts/input/handlers/rocket_launch_trigger.gd").new(self.bag, self, 5),
         preload("res://scripts/input/handlers/rocket_launch_trigger.gd").new(self.bag, self, 6),
         preload("res://scripts/input/handlers/rocket_launch_trigger.gd").new(self.bag, self, 7),
+        preload("res://scripts/input/handlers/swear_button.gd").new(self.bag, self, JOY_BUTTON_3),
+
     ]
 
     self.keyboard_handlers = [
@@ -50,6 +54,7 @@ func _init(bag, player_id).(bag):
         preload("res://scripts/input/handlers/player_accelerate_key.gd").new(self.bag, self, KEY_UP),
         preload("res://scripts/input/handlers/player_boost_key.gd").new(self.bag, self, KEY_DOWN),
         preload("res://scripts/input/handlers/rocket_launch_key.gd").new(self.bag, self, KEY_SPACE),
+        preload("res://scripts/input/handlers/swear_key.gd").new(self.bag, self, KEY_B),
     ]
 
 func spawn(initial_position):
@@ -163,7 +168,13 @@ func fire_rocket():
 func rocket_cooldown_done():
     self.rocket_cooldown = false
 
+func swear_cooldown_done():
+    self.swear_cooldown = false
+
 func swear():
+    if self.swear_cooldown:
+        return
+
     randomize()
     var suffix
     var item 
@@ -174,4 +185,7 @@ func swear():
     item = 'swear_' + suffix + str(randi() % 8 + 1)
     if self.bag.sound.can_play_sound():
         self.bag.sound.play(item)
+
+    self.swear_cooldown = true
+    self.bag.timers.set_timeout(self.SWEAR_COOLDOWN_TIME, self, "swear_cooldown_done")
 
