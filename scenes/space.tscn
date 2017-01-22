@@ -43,10 +43,10 @@ margin/bottom = 4629.0
 
 [node name="moon" parent="." instance=ExtResource( 5 )]
 
-margin/left = 5259.0
-margin/top = 4603.0
-margin/right = 5299.0
-margin/bottom = 4643.0
+margin/left = 5102.0
+margin/top = 3779.0
+margin/right = 5142.0
+margin/bottom = 3819.0
 
 [node name="sun" parent="." instance=ExtResource( 6 )]
 
