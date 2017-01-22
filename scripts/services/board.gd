@@ -13,6 +13,8 @@ var current_map = null
 var mount
 var ready = true
 
+var explosion_template = preload("res://particles/explosion.tscn")
+
 func _init():
     self.screen_scene = preload("res://scenes/board.tscn").instance()
     self.viewport_left = self.screen_scene.get_node('left/Viewport')
@@ -57,9 +59,17 @@ func end_game(looser):
     if not self.ready:
         return
 
+    self.bag.sound.play('ship_die')
+    self.add_explosion(looser.get_pos())
     self.ready = false
     self.bag.players.despawn_players()
     self.bag.players.reset()
     self.bag.input.switch_to_scheme("over")
     looser.show_fail()
-    self.bag.sound.play('ship_die')
+
+func add_explosion(position):
+    var explosion = self.explosion_template.instance()
+
+    self.current_map.add_child(explosion)
+    explosion.set_pos(position)
+

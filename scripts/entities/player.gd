@@ -19,6 +19,8 @@ var rocket_cooldown = false
 var rocket_firing = false
 var ROCKET_COOLDOWN_TIME = 0.1
 
+var score = 0
+
 func _init(bag, player_id).(bag):
     self.bag = bag
     self.player_id = player_id
@@ -100,6 +102,7 @@ func unbind_gamepad():
 func reset():
     self.rocket_cooldown = false
     self.rocket_firing = false
+    self.score = 0
     self.avatar.reset()
 
 func bind_camera(viewport):
@@ -136,7 +139,6 @@ func fire_rocket():
     if self.rocket_cooldown:
         return
 
-
     var rocket = self.rocket_template.instance()
     var position = self.avatar.get_pos()
     var starting_vector = Vector2(0, -1)
@@ -153,6 +155,7 @@ func fire_rocket():
     self.rocket_cooldown = true
     self.bag.timers.set_timeout(self.ROCKET_COOLDOWN_TIME, self, "rocket_cooldown_done")
 
+    rocket.owner = self.player_id
     self.bag.sound.play('rocket_launch')
 
 func rocket_cooldown_done():
@@ -161,7 +164,7 @@ func rocket_cooldown_done():
 func swear():
     randomize()
     var suffix
-    var item 
+    var item
     if self.player_id == 1:
         suffix = "ru_"
     else:

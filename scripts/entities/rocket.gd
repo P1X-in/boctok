@@ -12,6 +12,8 @@ var started = false
 
 var engines = []
 
+var owner
+
 
 func _integrate_forces(s):
     var pos = self.get_pos()
@@ -39,6 +41,7 @@ func _integrate_forces(s):
 
 func _colliding_body(body):
     self.bag.sound.play('rocket_bang')
+    self.bag.board.add_explosion(self.get_pos())
     self.queue_free()
 
 func __engines_start(engines):
