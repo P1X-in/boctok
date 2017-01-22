@@ -61,6 +61,8 @@ func update_sun_warning(player):
     var distance = player.avatar.get_pos().distance_to(self.sun_position)
     if distance <= self.SUN_PROXIMITY_ALERT_DISTANCE or distance >= self.TOO_FAR:
         self.proximity_indicators[player.player_id].show()
+        return true
     else:
         self.proximity_indicators[0].hide()
         self.proximity_indicators[1].hide()
+        return false

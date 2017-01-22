@@ -125,7 +125,8 @@ func process(delta):
     hud.update_fuel(self.avatar.fuel)
     hud.update_gravity(self.avatar.current_gravity)
     hud.update_ship_velocity(self.avatar.current_acceleration)
-    hud.update_sun_warning(self)
+    if hud.update_sun_warning(self):
+        self.swear()
 
     if self.rocket_firing and not self.rocket_cooldown:
         self.fire_rocket()
@@ -134,6 +135,7 @@ func process(delta):
 func fire_rocket():
     if self.rocket_cooldown:
         return
+
 
     var rocket = self.rocket_template.instance()
     var position = self.avatar.get_pos()
@@ -156,3 +158,16 @@ func fire_rocket():
 
 func rocket_cooldown_done():
     self.rocket_cooldown = false
+
+func swear():
+    randomize()
+    var suffix
+    var item 
+    if self.player_id == 1:
+        suffix = "ru_"
+    else:
+        suffix = "en_"
+    item = 'swear_' + suffix + str(randi() % 8 + 1)
+    if self.bag.sound.can_play_sound():
+        self.bag.sound.play(item)
+
