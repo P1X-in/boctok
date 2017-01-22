@@ -103,7 +103,6 @@ func unbind_gamepad():
 func reset():
     self.rocket_cooldown = false
     self.rocket_firing = false
-    self.score = 0
     self.avatar.reset()
 
 func bind_camera(viewport):
@@ -167,8 +166,8 @@ func rocket_cooldown_done():
 func swear():
     randomize()
     var suffix
-    var item
-    if self.player_id == 1:
+    var item 
+    if self.player_id == 0:
         suffix = "ru_"
     else:
         suffix = "en_"
