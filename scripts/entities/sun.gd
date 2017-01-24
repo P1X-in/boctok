@@ -2,7 +2,7 @@ extends Control
 
 const FUEL_GRANTED = 10
 const DISTANCE_LIMIT = 1500
-const KILL_LIMIT = 2500
+const KILL_LIMIT = 2000
 const SUN_KILL = 200
 
 var bag

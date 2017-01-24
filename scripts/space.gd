@@ -7,6 +7,7 @@ func _draw():
     var angle_to = 360
     var color = Color(1.0, 0.0, 0.0)
     draw_circle_arc( center, radius, angle_from, angle_to, color )
+    draw_circle_arc( center, 2000, angle_from, angle_to, color )
     color = Color(0.34, 0.32, 0.52)
     draw_circle_arc( center, 730, angle_from, angle_to, color )
     draw_circle_arc( center, 610, angle_from, angle_to, color )
