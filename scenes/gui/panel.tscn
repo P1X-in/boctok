@@ -27,6 +27,7 @@ script/script = ExtResource( 1 )
 
 [node name="background" type="GridContainer" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -41,6 +42,7 @@ columns = 8
 
 [node name="top" type="Control" parent="background"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 32, 32 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -881,6 +883,7 @@ alignment = 0
 
 [node name="sensor_small1" type="Control" parent="huds/sensors_small"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 72, 28 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -967,6 +970,7 @@ max_lines_visible = -1
 
 [node name="sensor_small2" type="Control" parent="huds/sensors_small"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 72, 28 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -1034,6 +1038,7 @@ max_lines_visible = -1
 
 [node name="proximity" type="Control" parent="huds"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
