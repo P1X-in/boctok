@@ -2,6 +2,7 @@ extends "res://scripts/entities/object.gd"
 
 var camera
 var hud
+var fuel_gauge
 var newspaper
 
 var player_id
@@ -113,8 +114,9 @@ func reset():
 func bind_camera(viewport):
     self.camera.set_custom_viewport(viewport)
 
-func bind_hud(hud):
+func bind_hud(hud, fuel_gauge):
     self.hud = hud
+    self.fuel_gauge = fuel_gauge
 
 func bind_newspaper(newspaper):
     self.newspaper = newspaper
@@ -129,11 +131,12 @@ func show_fail():
         self.newspaper.get_node('pravda').hide()
 
 func process(delta):
-    hud.update_sun_indicator(self.avatar.get_pos())
-    hud.update_fuel(self.avatar.fuel)
-    hud.update_gravity(self.avatar.current_gravity)
-    hud.update_ship_velocity(self.avatar.current_acceleration)
-    hud.update_score(self.score)
+    self.hud.update_sun_indicator(self.avatar.get_pos())
+    self.hud.update_fuel(self.avatar.fuel)
+    self.fuel_gauge.update_fuel(self.avatar.fuel)
+    self.hud.update_gravity(self.avatar.current_gravity)
+    self.hud.update_ship_velocity(self.avatar.current_acceleration)
+    self.hud.update_score(self.score)
 
     if hud.update_sun_warning(self):
         self.swear()

@@ -3,9 +3,11 @@ extends "res://scripts/services/abstract_screen.gd"
 var viewport_left
 var hud_left
 var newspaper_left
+var fuel_gauge_left
 var viewport_right
 var hud_right
 var newspaper_right
+var fuel_gauge_right
 
 var attached_objects = {}
 var current_map = null
@@ -17,12 +19,16 @@ var explosion_template = preload("res://particles/explosion.tscn")
 
 func _init():
     self.screen_scene = preload("res://scenes/board.tscn").instance()
+
     self.viewport_left = self.screen_scene.get_node('left/Viewport')
     self.hud_left = self.screen_scene.get_node('left/hud/anchor/panel')
     self.newspaper_left = self.screen_scene.get_node('left/newspaper')
+    self.fuel_gauge_left = self.screen_scene.get_node('left/hud/anchor/fuel')
+
     self.viewport_right = self.screen_scene.get_node('right/Viewport')
     self.hud_right = self.screen_scene.get_node('right/hud/anchor/panel')
     self.newspaper_right = self.screen_scene.get_node('right/newspaper')
+    self.fuel_gauge_right = self.screen_scene.get_node('right/hud/anchor/fuel')
 
     self.mount = self.viewport_left.get_node('mount')
     self.current_map = self.mount.get_node('space')

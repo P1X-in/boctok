@@ -18,11 +18,11 @@ func bind_players():
     self.players[0].bind_keyboard()
     self.players[0].bind_gamepad(1)
     self.players[0].bind_camera(self.bag.board.viewport_left)
-    self.players[0].bind_hud(self.bag.board.hud_left)
+    self.players[0].bind_hud(self.bag.board.hud_left, self.bag.board.fuel_gauge_left)
     self.players[0].bind_newspaper(self.bag.board.newspaper_left)
     self.players[1].bind_gamepad(0)
     self.players[1].bind_camera(self.bag.board.viewport_right)
-    self.players[1].bind_hud(self.bag.board.hud_right)
+    self.players[1].bind_hud(self.bag.board.hud_right, self.bag.board.fuel_gauge_right)
     self.players[1].bind_newspaper(self.bag.board.newspaper_right)
 
 func is_gamepad_in_use(id):
