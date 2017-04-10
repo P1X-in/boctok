@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/gui/arrow.png" type="Texture" id=1]
+[ext_resource path="res://scripts/services/tracking_arrow.gd" type="Script" id=2]
+
+[node name="arrow" type="Sprite"]
+
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+
+

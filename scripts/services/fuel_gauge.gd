@@ -11,5 +11,4 @@ func _ready():
 
 func update_fuel(amount):
     self.scale.y = float(-1 * amount) / 100.0 * self.SIZE_FACTOR
-    print(self.scale)
     self.bar.set_scale(self.scale)

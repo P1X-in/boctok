@@ -66,11 +66,14 @@ func attach():
     self.bag.processing.register(self)
     self.newspaper.hide()
     self.hud.show()
+    self.fuel_gauge.show()
+    self.score = 0
     .attach()
 
 func detach():
     self.bag.processing.remove(self)
     self.hud.hide()
+    self.fuel_gauge.hide()
     .detach()
 
 func bind_keyboard():
@@ -143,7 +146,6 @@ func process(delta):
 
     if self.rocket_firing and not self.rocket_cooldown:
         self.fire_rocket()
-
 
 func fire_rocket():
     if self.rocket_cooldown:

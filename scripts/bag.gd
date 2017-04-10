@@ -21,6 +21,7 @@ func _init_bag(root):
     self.sound._init_bag(self, root)
     #self.maps._init_bag(self)
     self.players._init_bag(self)
+    self.board.bind_trackers()
 
 func reset():
     self.players.reset()
