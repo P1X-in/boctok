@@ -76,6 +76,7 @@ POS_Y_MAX = 2048
 
 [node name="hud" type="CenterContainer" parent="left"]
 
+editor/display_folded = true
 anchor/top = 1
 anchor/right = 1
 anchor/bottom = 1
@@ -104,15 +105,50 @@ margin/bottom = 0.0
 
 [node name="fuel" parent="left/hud/anchor" instance=ExtResource( 4 )]
 
-margin/left = -169.0
-margin/top = -51.0
-margin/right = -137.0
-margin/bottom = -11.0
+margin/left = -157.0
+margin/top = 289.0
+margin/right = -125.0
+margin/bottom = 329.0
+
+[node name="hud_side" type="CenterContainer" parent="left"]
+
+editor/display_folded = true
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 64.0
+margin/top = 0.0
+margin/right = 64.0
+margin/bottom = 0.0
+use_top_left = false
+
+[node name="anchor" type="Control" parent="left/hud_side"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 360.0
+margin/right = 0.0
+margin/bottom = 360.0
+
+[node name="fuel" parent="left/hud_side/anchor" instance=ExtResource( 4 )]
 
 [node name="frame" parent="left" instance=ExtResource( 5 )]
 
 editor/display_folded = true
 margin/bottom = -1.0
+
+[node name="game" parent="left/frame"]
+
+editor/display_folded = true
+
+[node name="top" parent="left/frame"]
+
+editor/display_folded = true
 
 [node name="box" parent="left/frame/top/contener"]
 
@@ -158,6 +194,7 @@ gui/disable_input = false
 
 [node name="hud" type="CenterContainer" parent="right"]
 
+editor/display_folded = true
 anchor/top = 1
 anchor/right = 1
 anchor/bottom = 1
@@ -190,6 +227,35 @@ margin/left = 136.0
 margin/top = -51.0
 margin/right = 168.0
 margin/bottom = -11.0
+
+[node name="hud_side" type="CenterContainer" parent="right"]
+
+editor/display_folded = true
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 64.0
+margin/top = 0.0
+margin/right = 64.0
+margin/bottom = 0.0
+use_top_left = false
+
+[node name="anchor" type="Control" parent="right/hud_side"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 360.0
+margin/right = 0.0
+margin/bottom = 360.0
+
+[node name="fuel" parent="right/hud_side/anchor" instance=ExtResource( 4 )]
 
 [node name="frame" parent="right" instance=ExtResource( 5 )]
 

@@ -38,7 +38,6 @@ custom_styles/panelnc = ExtResource( 1 )
 [node name="arrow" parent="game" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 52.3033, 47.7813 )
-transform/scale = Vector2( 0.242785, 0.242785 )
 
 [node name="top" type="Panel" parent="."]
 
