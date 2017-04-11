@@ -26,13 +26,13 @@ func _init():
     self.viewport_left = self.screen_scene.get_node('left/Viewport')
     self.hud_left = self.screen_scene.get_node('left/hud/anchor/panel')
     self.newspaper_left = self.screen_scene.get_node('left/newspaper')
-    self.fuel_gauge_left = self.screen_scene.get_node('left/hud/anchor/fuel')
+    self.fuel_gauge_left = self.screen_scene.get_node('left/hud_side/anchor/fuel')
     self.tracker_left = self.screen_scene.get_node('left/frame/game/arrow')
 
     self.viewport_right = self.screen_scene.get_node('right/Viewport')
     self.hud_right = self.screen_scene.get_node('right/hud/anchor/panel')
     self.newspaper_right = self.screen_scene.get_node('right/newspaper')
-    self.fuel_gauge_right = self.screen_scene.get_node('right/hud/anchor/fuel')
+    self.fuel_gauge_right = self.screen_scene.get_node('right/hud_side/anchor/fuel')
     self.tracker_right = self.screen_scene.get_node('right/frame/game/arrow')
 
     self.mount = self.viewport_left.get_node('mount')

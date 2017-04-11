@@ -6,7 +6,7 @@ var box = null
 
 var box_size
 var box_size_margin = Vector2(0, 0)
-const BOX_MARGIN = 50
+const BOX_MARGIN = 32
 
 var ready = false
 var suppressed = false

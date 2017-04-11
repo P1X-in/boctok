@@ -103,13 +103,6 @@ margin/bottom = 0.0
 
 [node name="panel" parent="left/hud/anchor" instance=ExtResource( 3 )]
 
-[node name="fuel" parent="left/hud/anchor" instance=ExtResource( 4 )]
-
-margin/left = -157.0
-margin/top = 289.0
-margin/right = -125.0
-margin/bottom = 329.0
-
 [node name="hud_side" type="CenterContainer" parent="left"]
 
 editor/display_folded = true
@@ -118,9 +111,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 64.0
+margin/left = 32.0
 margin/top = 0.0
-margin/right = 64.0
+margin/right = 32.0
 margin/bottom = 0.0
 use_top_left = false
 
@@ -220,13 +213,6 @@ margin/right = 320.0
 margin/bottom = 0.0
 
 [node name="panel" parent="right/hud/anchor" instance=ExtResource( 3 )]
-
-[node name="fuel" parent="right/hud/anchor" instance=ExtResource( 4 )]
-
-margin/left = 136.0
-margin/top = -51.0
-margin/right = 168.0
-margin/bottom = -11.0
 
 [node name="hud_side" type="CenterContainer" parent="right"]
 

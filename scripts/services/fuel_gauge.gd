@@ -1,6 +1,6 @@
 extends Control
 
-const SIZE_FACTOR = 4
+const SIZE_FACTOR = 12
 
 var bar
 var scale
