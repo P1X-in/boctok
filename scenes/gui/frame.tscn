@@ -17,7 +17,9 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="game" type="Panel" parent="."]
 
@@ -75,9 +77,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 512.0
+margin/left = 382.0
 margin/top = 0.0
-margin/right = 768.0
+margin/right = 638.0
 margin/bottom = 32.0
 
 [node name="label" type="Label" parent="top/contener/box"]
@@ -90,9 +92,40 @@ size_flags/vertical = 0
 theme/theme = ExtResource( 4 )
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 128.0
-margin/bottom = 20.0
+margin/right = 256.0
+margin/bottom = 32.0
 text = "PLAYER 1"
+align = 1
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="box2" type="Control" parent="top/contener"]
+
+rect/min_size = Vector2( 256, 32 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 642.0
+margin/top = 0.0
+margin/right = 898.0
+margin/bottom = 32.0
+
+[node name="score" type="Label" parent="top/contener/box2"]
+
+rect/min_size = Vector2( 190, 32 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+theme/theme = ExtResource( 4 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 190.0
+margin/bottom = 32.0
+text = "9999999999"
 align = 1
 valign = 2
 percent_visible = 1.0

@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/gui/fuel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gui/frame.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/share/newspaper.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/share/logo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/gui/pico8-font.tres" type="Theme" id=7]
 
 [node name="board" type="Control"]
 
@@ -145,12 +145,17 @@ editor/display_folded = true
 
 [node name="box" parent="left/frame/top/contener"]
 
-margin/left = 192.0
-margin/right = 448.0
+margin/left = 62.0
+margin/right = 318.0
 
 [node name="label" parent="left/frame/top/contener/box"]
 
 text = "Yuri Gagarin"
+
+[node name="box2" parent="left/frame/top/contener"]
+
+margin/left = 322.0
+margin/right = 578.0
 
 [node name="newspaper" parent="left" instance=ExtResource( 6 )]
 
@@ -167,6 +172,9 @@ margin/left = 640.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Viewport" type="Viewport" parent="right"]
 
@@ -252,18 +260,22 @@ margin/bottom = -1.0
 
 [node name="box" parent="right/frame/top/contener"]
 
-margin/left = 192.0
-margin/right = 448.0
+margin/left = 62.0
+margin/right = 318.0
 
 [node name="label" parent="right/frame/top/contener/box"]
 
 text = "John Glenn"
 
+[node name="box2" parent="right/frame/top/contener"]
+
+margin/left = 322.0
+margin/right = 578.0
+
 [node name="newspaper" parent="right" instance=ExtResource( 6 )]
 
 [node name="top_center" type="CenterContainer" parent="."]
 
-editor/display_folded = true
 anchor/right = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -286,10 +298,35 @@ margin/top = 16.0
 margin/right = 640.0
 margin/bottom = 16.0
 
-[node name="logo" parent="top_center/anchor" instance=ExtResource( 7 )]
+[node name="timer" type="Control" parent="top_center/anchor"]
 
-margin/top = 5.0
-margin/bottom = 5.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="time" type="Label" parent="top_center/anchor/timer"]
+
+rect/min_size = Vector2( 100, 24 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+theme/theme = ExtResource( 7 )
+margin/left = -50.0
+margin/top = -8.0
+margin/right = 50.0
+margin/bottom = 16.0
+text = "09:59"
+align = 1
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
 [editable path="left/frame"]
