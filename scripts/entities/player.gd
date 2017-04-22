@@ -113,6 +113,7 @@ func reset():
     self.rocket_cooldown = false
     self.rocket_firing = false
     self.avatar.reset()
+    self.score = 0
 
 func bind_camera(viewport):
     self.camera.set_custom_viewport(viewport)
