@@ -49,3 +49,19 @@ func despawn_players():
 func reset():
     for player in self.players:
         player.reset()
+
+func show_tie_fail():
+    for player in self.players:
+        player.show_fail()
+
+
+func get_lowest_score_player():
+    var player1 = self.players[0]
+    var player2 = self.players[1]
+
+    if player1.score > player2.score:
+        return player2
+    elif player2.score > player1.score:
+        return player1
+    else:
+        return null

@@ -9,7 +9,7 @@ func handle(event):
     self.bag.intro.detach()
     self.bag.board.attach()
     self.bag.input.switch_to_scheme("game")
-    self.bag.players.spawn_players()
+    self.bag.board.start_game()
     self.bag.sound.play_soundtrack("space")
 
 func _init(bag):

@@ -14,6 +14,8 @@ var fuel_gauge_right
 var tracker_right
 var score_big_right
 
+var game_timer
+
 var attached_objects = {}
 var current_map = null
 
@@ -41,15 +43,22 @@ func _init():
     self.score_big_right = self.screen_scene.get_node('right/frame/top/contener/box2/score')
     self.hud_right.add_big_score(self.score_big_right)
 
+    self.game_timer = self.screen_scene.get_node('top_center/anchor/timer/time')
+
     self.mount = self.viewport_left.get_node('mount')
     self.current_map = self.mount.get_node('space')
 
     self.viewport_right.set_world_2d(self.viewport_left.get_world_2d())
 
+func _init_bag(bag, root):
+    ._init_bag(bag, root)
+    self.game_timer._init_bag(bag)
+
 func reset():
     #self.clear_all_objects()
     self.ready = true
     self.show_trackers()
+    self.game_timer.reset()
 
 
 func attach_object(object):
@@ -72,19 +81,27 @@ func clear_all_objects():
     self.attached_objects.clear()
 
 
+func start_game():
+    self.reset()
+    self.bag.players.spawn_players()
+    self.game_timer.start_timer()
 
 func end_game(looser):
     if not self.ready:
         return
 
     self.hide_trackers()
-    self.bag.sound.play('ship_die')
-    self.add_explosion(looser.get_pos())
+    if looser != null:
+        self.bag.sound.play('ship_die')
+        self.add_explosion(looser.get_pos())
     self.ready = false
     self.bag.players.despawn_players()
     self.bag.players.reset()
     self.bag.input.switch_to_scheme("over")
-    looser.show_fail()
+    if looser != null:
+        looser.show_fail()
+    else:
+        self.bag.players.show_tie_fail()
 
 func add_explosion(position):
     var explosion = self.explosion_template.instance()
