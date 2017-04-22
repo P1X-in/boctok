@@ -69,3 +69,7 @@ func get_lowest_score_player():
         return player1
     else:
         return null
+
+func rumble_pads(low_magnitude, high_magnitude, time):
+    for player in players:
+        Input.start_joy_vibration(player.gamepad_id, low_magnitude, high_magnitude, time)

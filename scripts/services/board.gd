@@ -104,6 +104,8 @@ func end_game(looser):
     else:
         self.bag.players.show_tie_fail()
 
+    self.bag.players.rumble_pads(0.5, 0, 0.2)
+
 func add_explosion(position):
     var explosion = self.explosion_template.instance()
 
