@@ -127,12 +127,19 @@ func bind_newspaper(newspaper):
 
 func show_fail():
     self.newspaper.show()
+    self.newspaper.get_node('victory').hide()
     if self.player_id == 0:
         self.newspaper.get_node('nyt').hide()
         self.newspaper.get_node('pravda').show()
     else:
         self.newspaper.get_node('nyt').show()
         self.newspaper.get_node('pravda').hide()
+
+func show_win():
+    self.newspaper.show()
+    self.newspaper.get_node('victory').show()
+    self.newspaper.get_node('nyt').hide()
+    self.newspaper.get_node('pravda').hide()
 
 func process(delta):
     self.hud.update_sun_indicator(self.avatar.get_pos())

@@ -99,6 +99,7 @@ func end_game(looser):
     self.bag.players.reset()
     self.bag.input.switch_to_scheme("over")
     if looser != null:
+        self.bag.players.show_all_win()
         looser.show_fail()
     else:
         self.bag.players.show_tie_fail()

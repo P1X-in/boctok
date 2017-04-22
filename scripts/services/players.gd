@@ -54,6 +54,10 @@ func show_tie_fail():
     for player in self.players:
         player.show_fail()
 
+func show_all_win():
+    for player in self.players:
+        player.show_win()
+
 
 func get_lowest_score_player():
     var player1 = self.players[0]
