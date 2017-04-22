@@ -91,8 +91,8 @@ editor/display_folded = true
 
 [node name="box" parent="left/frame/top/contener"]
 
-margin/left = 62.0
-margin/right = 318.0
+margin/left = 58.0
+margin/right = 314.0
 
 [node name="label" parent="left/frame/top/contener/box"]
 
@@ -100,8 +100,8 @@ text = "Yuri Gagarin"
 
 [node name="box2" parent="left/frame/top/contener"]
 
-margin/left = 322.0
-margin/right = 578.0
+margin/left = 326.0
+margin/right = 582.0
 
 [node name="hud" type="CenterContainer" parent="left"]
 
@@ -114,9 +114,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 96.0
+margin/top = 80.0
 margin/right = 0.0
-margin/bottom = 128.0
+margin/bottom = 80.0
 use_top_left = false
 
 [node name="anchor" type="Control" parent="left/hud"]
@@ -211,8 +211,8 @@ editor/display_folded = true
 
 [node name="box" parent="right/frame/top/contener"]
 
-margin/left = 62.0
-margin/right = 318.0
+margin/left = 58.0
+margin/right = 314.0
 
 [node name="label" parent="right/frame/top/contener/box"]
 
@@ -220,8 +220,8 @@ text = "John Glenn"
 
 [node name="box2" parent="right/frame/top/contener"]
 
-margin/left = 322.0
-margin/right = 578.0
+margin/left = 326.0
+margin/right = 582.0
 
 [node name="hud" type="CenterContainer" parent="right"]
 
@@ -233,9 +233,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 96.0
+margin/top = 80.0
 margin/right = 0.0
-margin/bottom = 96.0
+margin/bottom = 80.0
 use_top_left = false
 
 [node name="anchor" type="Control" parent="right/hud"]
@@ -316,9 +316,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 24.0
 margin/right = 0.0
-margin/bottom = 0.0
+margin/bottom = 24.0
 
 [node name="Panel" type="Panel" parent="top_center/anchor/timer"]
 
@@ -346,6 +346,26 @@ margin/top = 11.0
 margin/right = 24.0
 margin/bottom = 35.0
 text = "90"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 9 )
+
+[node name="label" type="Label" parent="top_center/anchor/timer"]
+
+rect/min_size = Vector2( 48, 24 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+theme/theme = ExtResource( 8 )
+margin/left = -30.0
+margin/top = -32.0
+margin/right = 34.0
+margin/bottom = -8.0
+text = "time"
 align = 1
 valign = 1
 percent_visible = 1.0

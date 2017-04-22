@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/gui/frame_texture_style.tres" type="StyleBox" id=1]
 [ext_resource path="res://scenes/gui/arrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gui/frame_flat_style.tres" type="StyleBox" id=3]
-[ext_resource path="res://scenes/gui/pico8-font.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/gui/panel_box_light.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/gui/pico8-font.tres" type="Theme" id=5]
 
 [node name="frame" type="Control"]
 
@@ -30,9 +31,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 32.0
+margin/top = 28.0
 margin/right = 0.0
-margin/bottom = 0.0
+margin/bottom = 4.0
 custom_styles/panelf = ExtResource( 1 )
 custom_styles/panel = ExtResource( 1 )
 custom_styles/panelnc = ExtResource( 1 )
@@ -65,69 +66,78 @@ focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 12.0
 margin/right = 0.0
-margin/bottom = 0.0
+margin/bottom = -44.0
+custom_constants/separation = 12
 alignment = 1
 
-[node name="box" type="Control" parent="top/contener"]
+[node name="box" type="Panel" parent="top/contener"]
 
-rect/min_size = Vector2( 256, 32 )
+rect/min_size = Vector2( 256, 64 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 382.0
+theme/theme = ExtResource( 4 )
+margin/left = 378.0
 margin/top = 0.0
-margin/right = 638.0
-margin/bottom = 32.0
+margin/right = 634.0
+margin/bottom = 64.0
 
 [node name="label" type="Label" parent="top/contener/box"]
 
+anchor/right = 1
+anchor/bottom = 1
 rect/min_size = Vector2( 256, 32 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-theme/theme = ExtResource( 4 )
+theme/theme = ExtResource( 5 )
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 256.0
-margin/bottom = 32.0
+margin/right = 0.0
+margin/bottom = 24.0
+custom_colors/font_color = Color( 0.372549, 0.803922, 0.894118, 1 )
 text = "PLAYER 1"
 align = 1
-valign = 2
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="box2" type="Control" parent="top/contener"]
+[node name="box2" type="Panel" parent="top/contener"]
 
-rect/min_size = Vector2( 256, 32 )
+rect/min_size = Vector2( 256, 64 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 642.0
+theme/theme = ExtResource( 4 )
+margin/left = 646.0
 margin/top = 0.0
-margin/right = 898.0
-margin/bottom = 32.0
+margin/right = 902.0
+margin/bottom = 64.0
 
 [node name="score" type="Label" parent="top/contener/box2"]
 
-rect/min_size = Vector2( 190, 32 )
+anchor/right = 1
+anchor/bottom = 1
+rect/min_size = Vector2( 256, 32 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-theme/theme = ExtResource( 4 )
+theme/theme = ExtResource( 5 )
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 190.0
-margin/bottom = 32.0
-text = "9999999999"
+margin/right = 0.0
+margin/bottom = 24.0
+custom_colors/font_color = Color( 0.372549, 0.803922, 0.894118, 1 )
+text = "00000000"
 align = 1
-valign = 2
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
