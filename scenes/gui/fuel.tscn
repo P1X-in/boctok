@@ -337,4 +337,14 @@ vframes = 4
 hframes = 8
 frame = 30
 
+[node name="level1" type="Sprite" parent="huds"]
+
+transform/pos = Vector2( 0.400009, 156 )
+transform/rot = -5.00896e-05
+texture = ExtResource( 2 )
+centered = false
+vframes = 4
+hframes = 8
+frame = 28
+
 
