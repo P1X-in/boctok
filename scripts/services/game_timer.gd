@@ -27,6 +27,9 @@ func _game_timer_tick():
     self.time_left = self.time_left - 1
     self.update_timer()
 
+    if self.time_left < 11:
+        self.bag.players.rumble_pads(0.5, 0, 0.2)
+
     if self.time_left == 0:
         self.bag.board.end_game(self.bag.players.get_lowest_score_player())
     else:
