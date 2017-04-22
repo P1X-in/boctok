@@ -46,7 +46,7 @@ func _colliding_body(body):
 
     if body extends self.ship:
         var device_id = self.bag.players.players[body.player_id].gamepad_id
-        Input.start_joy_vibration(device_id, 0.5, 0, 0.2)
+        Input.start_joy_vibration(device_id, 1, 0, 0.2)
         self.bag.players.players[body.player_id].swear()
 
     self.bag.sound.play('rocket_bang')
