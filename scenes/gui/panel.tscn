@@ -27,7 +27,6 @@ script/script = ExtResource( 1 )
 
 [node name="background" type="GridContainer" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -42,7 +41,6 @@ columns = 8
 
 [node name="top" type="Control" parent="background"]
 
-editor/display_folded = true
 rect/min_size = Vector2( 32, 32 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
