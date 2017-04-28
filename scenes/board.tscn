@@ -91,17 +91,12 @@ editor/display_folded = true
 
 [node name="box" parent="left/frame/top/contener"]
 
-margin/left = 58.0
-margin/right = 314.0
+margin/left = 192.0
+margin/right = 448.0
 
 [node name="label" parent="left/frame/top/contener/box"]
 
 text = "Yuri Gagarin"
-
-[node name="box2" parent="left/frame/top/contener"]
-
-margin/left = 326.0
-margin/right = 582.0
 
 [node name="hud" type="CenterContainer" parent="left"]
 
@@ -176,9 +171,7 @@ margin/left = 640.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-__meta__ = {
-"_edit_lock_": true
-}
+__meta__ = { "_edit_lock_":true }
 
 [node name="Viewport" type="Viewport" parent="right"]
 
@@ -211,17 +204,12 @@ editor/display_folded = true
 
 [node name="box" parent="right/frame/top/contener"]
 
-margin/left = 58.0
-margin/right = 314.0
+margin/left = 192.0
+margin/right = 448.0
 
 [node name="label" parent="right/frame/top/contener/box"]
 
 text = "John Glenn"
-
-[node name="box2" parent="right/frame/top/contener"]
-
-margin/left = 326.0
-margin/right = 582.0
 
 [node name="hud" type="CenterContainer" parent="right"]
 

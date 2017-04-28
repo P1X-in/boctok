@@ -6,7 +6,8 @@ var box = null
 
 var box_size
 var box_size_margin = Vector2(0, 0)
-const BOX_MARGIN = 32
+const BOX_MARGIN_X = 60
+const BOX_MARGIN_Y = 100
 
 var ready = false
 var suppressed = false
@@ -40,7 +41,7 @@ func face_tracked_ship(vector):
 
 func _ready():
     self.box_size = self.box.get_size() / 2
-    self.box_size_margin = self.box_size - Vector2(self.BOX_MARGIN, self.BOX_MARGIN)
+    self.box_size_margin = self.box_size - Vector2(self.BOX_MARGIN_X, self.BOX_MARGIN_Y)
     self.set_fixed_process(true)
 
 
