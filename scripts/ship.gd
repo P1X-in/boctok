@@ -77,7 +77,7 @@ func _integrate_forces(s):
         self.camera_zoom -= self.CAMERA_ZOOM_STEP * step
         if self.camera_zoom < 1:
             self.camera_zoom = 1
-    self.camera.set_zoom(Vector2(self.camera_zoom, self.camera_zoom))
+    #self.camera.set_zoom(Vector2(self.camera_zoom, self.camera_zoom))
 
     self.current_gravity = s.get_total_gravity() * step * self.GRAVITY_FACTOR
     lv += self.current_gravity
