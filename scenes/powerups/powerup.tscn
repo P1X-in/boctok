@@ -35,7 +35,7 @@ margin/bottom = 0.0
 
 texture = ExtResource( 1 )
 hframes = 4
-frame = 2
+frame = 3
 
 [node name="icon" type="Sprite" parent="."]
 
