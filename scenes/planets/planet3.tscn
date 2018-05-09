@@ -9,8 +9,14 @@
 
 texture = ExtResource( 2 )
 
+[node name="StaticBody2D" parent="."]
+
+transform/scale = Vector2( 2, 2 )
+friction = 0.0
+
 [node name="CollisionShape2D" parent="StaticBody2D"]
 
-transform/scale = Vector2( 0.6, 0.6 )
+transform/pos = Vector2( 1.5, 1.5 )
+transform/scale = Vector2( 2, 2 )
 
 

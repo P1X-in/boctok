@@ -9,8 +9,10 @@
 
 texture = ExtResource( 2 )
 
-[node name="camera" parent="."]
+[node name="CollisionShape2D" parent="."]
 
-limit/smoothed = false
+visibility/visible = true
+transform/pos = Vector2( 0.550001, 4.1524 )
+transform/scale = Vector2( 0.9, 0.407576 )
 
 

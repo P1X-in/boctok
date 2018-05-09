@@ -8,6 +8,7 @@
 
 [node name="atmosfere" parent="Particles"]
 
+config/process_mode = 1
 config/texture = ExtResource( 2 )
 
 [node name="Sprite" parent="."]
@@ -15,9 +16,21 @@ config/texture = ExtResource( 2 )
 transform/pos = Vector2( 1, 0 )
 texture = ExtResource( 3 )
 
+[node name="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 6, 6 )
+transform/scale = Vector2( 2, 2 )
+friction = 0.0
+
 [node name="CollisionShape2D" parent="StaticBody2D"]
 
-transform/scale = Vector2( 0.9, 0.9 )
+transform/pos = Vector2( -2.93205, -0.500004 )
+transform/scale = Vector2( 2.5, 2.5 )
+
+[node name="Area2D" parent="."]
+
+visibility/visible = false
+gravity = 800.0
 
 
 [editable path="Particles"]

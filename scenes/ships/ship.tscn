@@ -44,8 +44,7 @@ texture = ExtResource( 3 )
 [node name="camera" type="Camera2D" parent="."]
 
 visibility/visible = false
-offset = Vector2( -500, -540 )
-anchor_mode = 0
+anchor_mode = 1
 rotating = false
 current = true
 zoom = Vector2( 1, 1 )
@@ -53,14 +52,14 @@ limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
 limit/bottom = 10000000
-drag_margin/h_enabled = false
-drag_margin/v_enabled = false
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
 smoothing/enable = false
 smoothing/speed = 5.0
-drag_margin/left = 0.1
-drag_margin/top = 0.1
-drag_margin/right = 0.1
-drag_margin/bottom = 0.1
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

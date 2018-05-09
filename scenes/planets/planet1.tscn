@@ -9,8 +9,19 @@
 
 texture = ExtResource( 2 )
 
+[node name="StaticBody2D" parent="."]
+
+transform/scale = Vector2( 2, 2 )
+friction = 0.0
+bounce = 0.001
+
 [node name="CollisionShape2D" parent="StaticBody2D"]
 
-transform/scale = Vector2( 0.8, 0.8 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="Area2D" parent="."]
+
+visibility/visible = false
+gravity = 800.0
 
 
